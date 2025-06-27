@@ -90,22 +90,47 @@ export default function AnimatedHero() {
         duration: 0.5
       })
 
-      // 生徒情報ボックスのアニメーション
-      gsap.fromTo("#student-info-box",
-        {
-          opacity: 0,
-          x: 50,
-          scale: 0.95
-        },
-        {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 2,
-          delay: 0.8,
-          ease: "power3.out"
-        }
-      )
+      // hero-info-boxのアニメーション（改善版）
+      gsap.set("#hero-info-box", {
+        opacity: 0,
+        y: 30,
+        x: 20,
+        scale: 0.98,
+        rotationY: 5
+      })
+
+      gsap.to("#hero-info-box", {
+        opacity: 1,
+        y: 0,
+        x: 0,
+        scale: 1,
+        rotationY: 0,
+        duration: 1.8,
+        delay: 1.2,
+        ease: "expo.out"
+      })
+
+      // ホバー効果の強化
+      const heroInfoBox = document.querySelector("#hero-info-box")
+      if (heroInfoBox) {
+        heroInfoBox.addEventListener('mouseenter', () => {
+          gsap.to("#hero-info-box", {
+            y: -8,
+            scale: 1.02,
+            duration: 0.4,
+            ease: "power2.out"
+          })
+        })
+
+        heroInfoBox.addEventListener('mouseleave', () => {
+          gsap.to("#hero-info-box", {
+            y: 0,
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out"
+          })
+        })
+      }
 
       // フローティングエレメンツ
       gsap.to(".floating-element", {
@@ -245,10 +270,10 @@ export default function AnimatedHero() {
             ))}
           </div>
 
-          {/* ミニマルな生徒情報ボックス */}
+          {/* サイト名 */}
           <div
-            id="student-info-box"
-            className="absolute top-[10%] md:top-[15%] right-4 md:right-[-100px] z-30 bg-white/95 backdrop-blur-sm border border-neutral-200 shadow-xl p-6 md:p-8 w-[280px] md:w-[360px] rounded-lg transform hover:translate-y-[-4px] transition-all duration-300"
+            id="hero-info-box"
+            className="absolute top-[10%] md:top-[15%] right-4 md:right-[-100px] z-30 bg-white/95 backdrop-blur-sm border border-neutral-200 shadow-xl p-6 md:p-8 w-[280px] md:w-[360px] rounded-lg transform-gpu will-change-transform"
           >
             <div className="space-y-4 md:space-y-6">
               {/* ヘッダー */}
