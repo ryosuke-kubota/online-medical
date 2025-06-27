@@ -184,75 +184,13 @@ export default function AnimatedHero() {
             <div className="space-y-6">
               {/* ヘッダー */}
               <div className="text-center">
-                <div className="w-20 h-20 bg-neutral-900 mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white font-bold text-2xl">田</span>
-                </div>
                 <h2 className="text-3xl font-bold text-neutral-900 mb-2" style={{ fontFamily: 'Ranade, sans-serif' }}>
-                  田中 太郎
+                  OOPS
                 </h2>
-                <div className="inline-flex items-center px-4 py-2 bg-neutral-100 border border-neutral-200">
-                  <span className="text-sm text-neutral-700 font-medium">医学部 3年生</span>
-                </div>
+                <p>このサイトのコンセプト！！！！</p>
               </div>
-              
-              {/* 学習コンセプト */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-neutral-900 text-center">学習コンセプト</h3>
-                <div className="space-y-3">
-                  {[
-                    { text: "実践的な臨床知識の習得", accent: "bg-blue-500" },
-                    { text: "患者中心のケア理念", accent: "bg-emerald-500" },
-                    { text: "継続的な学習と成長", accent: "bg-purple-500" }
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-4 border border-neutral-200 hover:border-neutral-300 transition-colors">
-                      <div className={`w-1 h-8 ${item.accent}`}></div>
-                      <span className="text-sm text-neutral-700 flex-1">{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* 引用文 */}
-              <div className="relative p-6 bg-neutral-50 border border-neutral-200">
-                <div className="absolute top-2 left-4 text-neutral-300 text-4xl font-serif">"</div>
-                <p className="text-neutral-700 text-center pt-4 font-medium">
-                  医療の未来を創る、<br />
-                  <span className="font-bold text-neutral-900">
-                    情熱ある学習者として
-                  </span>
-                </p>
-                <div className="absolute bottom-2 right-4 text-neutral-300 text-4xl font-serif rotate-180">"</div>
-              </div>
-            </div>
-
-            {/* プログレスインジケーター */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              {heroData.map((_, index) => (
-                <div
-                  key={index}
-                  className={`h-1 transition-all duration-300 ${
-                    index === currentIndex ? 'bg-neutral-900 w-8' : 'bg-neutral-300 w-2'
-                  }`}
-                ></div>
-              ))}
             </div>
           </div>
-
-          {/* コントロールボタン */}
-          <button
-            onClick={() => setIsPlaying(!isPlaying)}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 bg-white border border-neutral-200 shadow-lg p-4 text-neutral-900 hover:shadow-xl hover:translate-y-[-2px] transition-all duration-300"
-          >
-            {isPlaying ? (
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-              </svg>
-            )}
-          </button>
         </div>
       </div>
     </div>
