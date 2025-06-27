@@ -75,7 +75,7 @@ export default function AnimatedHero() {
       tl.to(
         "#text h1",
         {
-          top: "-75px",
+          top: window.innerWidth < 640 ? "-60px" : "-75px",
           stagger: 2,
           duration: 2,
           delay: 2,
@@ -233,29 +233,29 @@ export default function AnimatedHero() {
         </div>
       </div>
 
-      {/* ミニマルなアクセント要素 */}
-      <div className="floating-element absolute top-1/4 left-4 md:left-10 w-2 h-2 bg-neutral-900 rounded-full"></div>
-      <div className="floating-element absolute top-1/3 right-8 md:right-20 w-1 h-8 bg-neutral-900"></div>
-      <div className="floating-element absolute bottom-1/4 left-1/4 w-8 h-1 bg-neutral-900"></div>
-      <div className="floating-element absolute bottom-1/3 right-1/3 w-3 h-3 bg-neutral-900 rotate-45"></div>
+      {/* ミニマルなアクセント要素 - スマホ対応 */}
+      <div className="floating-element absolute top-1/4 left-2 sm:left-4 md:left-10 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-neutral-900 rounded-full"></div>
+      <div className="floating-element absolute top-1/3 right-4 sm:right-8 md:right-20 w-0.5 sm:w-1 h-6 sm:h-8 bg-neutral-900"></div>
+      <div className="floating-element absolute bottom-1/4 left-1/4 w-6 sm:w-8 h-0.5 sm:h-1 bg-neutral-900"></div>
+      <div className="floating-element absolute bottom-1/3 right-1/3 w-2 sm:w-3 h-2 sm:h-3 bg-neutral-900 rotate-45"></div>
 
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4 md:px-8">
         <div id="center" className="relative w-full max-w-7xl h-full flex items-center justify-center">
           {/* 元のアニメーションテキスト */}
-          <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-[-60px] w-[250px] md:w-[300px] h-[60px] md:h-[75px] z-10 overflow-hidden">
-            <h1 className="absolute top-[80px] md:top-[100px] left-[5px] md:left-[10px] text-[40px] md:text-[50px] lg:text-[60px] uppercase w-[250px] md:w-[300px] h-[60px] md:h-[75px] flex items-center justify-start tracking-[2px] md:tracking-[3px] font-bold text-neutral-900" style={{ fontFamily: 'Ranade, sans-serif' }}>
+          <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-[-60px] w-[200px] sm:w-[250px] md:w-[300px] h-[50px] sm:h-[60px] md:h-[75px] z-10 overflow-hidden">
+            <h1 className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-[5px] md:left-[10px] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-[200px] sm:w-[250px] md:w-[300px] h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-neutral-900" style={{ fontFamily: 'Ranade, sans-serif' }}>
               Klax
             </h1>
-            <h1 className="absolute top-[80px] md:top-[100px] left-[5px] md:left-[10px] text-[40px] md:text-[50px] lg:text-[60px] uppercase w-[250px] md:w-[300px] h-[60px] md:h-[75px] flex items-center justify-start tracking-[2px] md:tracking-[3px] font-bold text-neutral-900" style={{ fontFamily: 'Ranade, sans-serif' }}>
+            <h1 className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-[5px] md:left-[10px] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-[200px] sm:w-[250px] md:w-[300px] h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-neutral-900" style={{ fontFamily: 'Ranade, sans-serif' }}>
               Kalpan
             </h1>
-            <h1 className="absolute top-[80px] md:top-[100px] left-[5px] md:left-[10px] text-[40px] md:text-[50px] lg:text-[60px] uppercase w-[250px] md:w-[300px] h-[60px] md:h-[75px] flex items-center justify-start tracking-[2px] md:tracking-[3px] font-bold text-neutral-900" style={{ fontFamily: 'Ranade, sans-serif' }}>
+            <h1 className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-[5px] md:left-[10px] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-[200px] sm:w-[250px] md:w-[300px] h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-neutral-900" style={{ fontFamily: 'Ranade, sans-serif' }}>
               Kraven
             </h1>
           </div>
           
           {/* 画像コンテナ */}
-          <div className="relative w-full md:w-[70%] h-[60%] md:h-[70%] flex items-center justify-center">
+          <div className="relative w-full sm:w-[85%] md:w-[70%] h-[50%] sm:h-[60%] md:h-[70%] flex items-center justify-center">
             {heroData.map((item, index) => (
               <div key={index} id="image-container" className="absolute w-0 h-full overflow-hidden shadow-2xl rounded-lg">
                 <div className="relative w-full h-full">
@@ -270,20 +270,20 @@ export default function AnimatedHero() {
             ))}
           </div>
 
-          {/* サイト名 */}
+          {/* サイト名 - スマホでは上部中央、タブレット以上では右上 */}
           <div
             id="hero-info-box"
-            className="absolute top-[10%] md:top-[15%] right-4 md:right-[-100px] z-30 bg-white/95 backdrop-blur-sm border border-neutral-200 shadow-xl p-6 md:p-8 w-[280px] md:w-[360px] rounded-lg transform-gpu will-change-transform"
+            className="absolute top-[8%] sm:top-[10%] md:top-[15%] left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none sm:right-4 md:right-[-100px] z-30 bg-white/95 backdrop-blur-sm border border-neutral-200 shadow-xl p-4 sm:p-6 md:p-8 w-[260px] sm:w-[280px] md:w-[360px] rounded-lg transform-gpu will-change-transform"
           >
-            <div className="space-y-4 md:space-y-6">
+            <div className="space-y-3 sm:space-y-4 md:space-y-6">
               {/* ヘッダー */}
               <div className="text-center">
-                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-2" style={{ fontFamily: 'Ranade, sans-serif' }}>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 mb-2" style={{ fontFamily: 'Ranade, sans-serif' }}>
                   OOPS
                 </h2>
-                <p className="text-sm md:text-base text-neutral-700">オンライン診療で<br />あなたの健康をサポート</p>
-                <div className="mt-4 pt-4 border-t border-neutral-200">
-                  <p className="text-xs md:text-sm text-neutral-600">
+                <p className="text-xs sm:text-sm md:text-base text-neutral-700">オンライン診療で<br />あなたの健康をサポート</p>
+                <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-neutral-200">
+                  <p className="text-xs sm:text-xs md:text-sm text-neutral-600">
                     スマホで完結する<br />
                     新しい医療体験
                   </p>
