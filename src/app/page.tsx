@@ -171,21 +171,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Image
-            src="https://ext.same-assets.com/3284986432/991739575.svg"
-            alt="Oops"
-            width={120}
-            height={40}
-          />
-          <Button className="gradient-blue text-white px-6 py-2 rounded-full hover-scale">
-            まずは気軽に相談・診療予約する
-          </Button>
-        </div>
-      </header>
-
       {/* Animated Hero Section */}
       <AnimatedHero />
 
