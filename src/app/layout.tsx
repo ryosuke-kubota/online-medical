@@ -25,6 +25,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=ranade@700,300,2,701,401,101,100,400,1,500,501,301&f[]=excon@400,900,700,500,300,100,1&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body suppressHydrationWarning className="antialiased">
         <ClientBody>{children}</ClientBody>
       </body>

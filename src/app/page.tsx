@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Image from "next/image"
 import Link from "next/link"
+import AnimatedHero from "@/components/AnimatedHero"
 
 export default function Home() {
   const heroImages = [
@@ -185,48 +186,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Carousel */}
-      <section className="pt-20 relative">
-        <Carousel className="w-full carousel-container">
-          <CarouselContent>
-            {heroImages.map((image, index) => (
-              <CarouselItem key={`hero-${index}`}>
-                <div className="relative h-[70vh] w-full">
-                  <Image
-                    src={image}
-                    alt={`Hero ${index + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-8 hover-scale" />
-          <CarouselNext className="right-8 hover-scale" />
-        </Carousel>
-
-        <div className="absolute inset-0 hero-overlay flex items-center justify-center">
-          <div className="text-center text-white animate-fade-in-up">
-            <Image
-              src="https://ext.same-assets.com/3284986432/991739575.svg"
-              alt="Oops"
-              width={200}
-              height={80}
-              className="mx-auto mb-8 filter brightness-0 invert animate-float"
-            />
-            <h1 className="hero-title text-4xl md:text-6xl font-bold mb-4">
-              いろんな診療、ぜんぶオンラインで
-            </h1>
-            <p className="hero-subtitle text-xl md:text-2xl mb-8">
-              あなたの体と心に寄り添いながら、あなたにいちばん近い診療所を目指しています。
-            </p>
-            <Button size="lg" className="gradient-blue text-white px-8 py-4 rounded-full text-lg hover-scale">
-              まずは気軽に相談・診療予約する
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Animated Hero Section */}
+      <AnimatedHero />
 
       {/* Brand Section */}
       <section className="py-20 bg-gray-50">
