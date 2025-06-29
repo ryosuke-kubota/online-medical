@@ -5,6 +5,10 @@ import Image from "next/image"
 import Link from "next/link"
 import AnimatedHero from "@/components/AnimatedHero"
 
+import nextConfig from "../../next.config.mjs";
+
+const BASE_PATH = nextConfig.basePath || "";
+
 export default function Home() {
   const heroImages = [
     "https://ext.same-assets.com/3284986432/649696560.jpeg",
@@ -173,6 +177,106 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Animated Hero Section */}
       <AnimatedHero />
+
+      {/* About Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">About Oops</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Oopsは、スマートフォン一つで完結する革新的なオンライン診療サービスです。<br />
+                プライバシーを重視し、質の高い医療を身近にお届けします。
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900">私たちのミッション</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  医療へのアクセスをより簡単に、より身近にすることで、すべての人が健康で充実した生活を送れる社会の実現を目指しています。従来の医療の枠を超え、テクノロジーの力で新しい医療体験を提供します。
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">アクセシビリティ</h4>
+                      <p className="text-sm text-gray-600">時間や場所を選ばず、必要な時に医療サービスを受けられます</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">プライバシー保護</h4>
+                      <p className="text-sm text-gray-600">個人情報の取り扱いに最大限の配慮をしています</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">質の高い医療</h4>
+                      <p className="text-sm text-gray-600">経験豊富な医師による丁寧な診察を提供します</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="オンライン診療の様子"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-sm">24/7</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center p-6 bg-gray-50 rounded-xl">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">スマホで完結</h4>
+                <p className="text-gray-600 text-sm">予約から診察、薬の受け取りまで、すべてスマートフォンで完結します</p>
+              </div>
+              
+              <div className="text-center p-6 bg-gray-50 rounded-xl">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">安心・安全</h4>
+                <p className="text-gray-600 text-sm">厳格なセキュリティ基準に基づき、患者様の情報を安全に管理しています</p>
+              </div>
+              
+              <div className="text-center p-6 bg-gray-50 rounded-xl">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">専門医による診察</h4>
+                <p className="text-gray-600 text-sm">各分野の専門知識を持つ経験豊富な医師が診察を担当します</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Brand Section */}
       <section className="py-20 bg-gray-50">
