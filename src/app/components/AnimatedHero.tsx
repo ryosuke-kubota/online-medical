@@ -8,22 +8,39 @@ export default function AnimatedHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const heroData = [
     {
-      name: "Klax",
+      name: "ED 早漏防止",
       image: "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       accent: "bg-blue-500"
     },
     {
-      name: "Kalpan",
+      name: "飲む日焼け止め",
       image: "https://images.pexels.com/photos/3854884/pexels-photo-3854884.jpeg",
       accent: "bg-purple-500"
     },
     {
-      name: "Kraven",
+      name: "花粉症",
       image: "https://images.pexels.com/photos/6311250/pexels-photo-6311250.jpeg",
+      accent: "bg-emerald-500"
+    }
+    ,
+    {
+      name: "ピル",
+      image: "https://images.pexels.com/photos/3854884/pexels-photo-3854884.jpeg",
+      accent: "bg-emerald-500"
+    }
+    ,
+    {
+      name: "こころのお悩み",
+      image: "https://images.pexels.com/photos/6311250/pexels-photo-6311250.jpeg",
+      accent: "bg-emerald-500"
+    }
+    ,
+    {
+      name: "AGA",
+      image: "https://images.pexels.com/photos/3854884/pexels-photo-3854884.jpeg",
       accent: "bg-emerald-500"
     }
   ]
@@ -150,72 +167,8 @@ export default function AnimatedHero() {
     }
   }, [isPlaying, heroData.length])
 
-  // メニュー外クリックで閉じる
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isMenuOpen && !(event.target as Element).closest('.menu-container')) {
-        setIsMenuOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isMenuOpen])
-
   return (
     <div ref={containerRef} id="main" className="relative w-full h-screen min-h-[100vh] overflow-hidden">
-      {/* フローティングメニューボタン */}
-      <div className="fixed top-6 left-6 z-50">
-        <div className="flex items-center gap-4">
-          <Image
-            src="https://ext.same-assets.com/3284986432/991739575.svg"
-            alt="Oops"
-            width={100}
-            height={32}
-            className="hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-      </div>
-
-      {/* フローティングメニューボタン（右上） */}
-      <div className="fixed top-6 right-6 z-50 menu-container">
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="w-12 h-12 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
-        >
-          <div className="flex flex-col gap-1">
-            <div className={`w-5 h-0.5 bg-neutral-900 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
-            <div className={`w-5 h-0.5 bg-neutral-900 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
-            <div className={`w-5 h-0.5 bg-neutral-900 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
-          </div>
-        </button>
-        
-        {/* ドロップダウンメニュー */}
-        <div className={`absolute top-16 right-0 w-64 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-2xl shadow-xl transition-all duration-300 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-          <div className="p-6 space-y-4">
-            <div className="space-y-3">
-              <a href="#services" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">診療メニュー</a>
-              <a href="#features" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">サービス特徴</a>
-              <a href="#how-to-use" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">ご利用方法</a>
-              <a href="#faq" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">よくある質問</a>
-            </div>
-            <div className="pt-4 border-t border-neutral-200">
-              <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-4 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300">
-                診療予約する
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* フローティングCTAボタン */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm font-medium">
-          診療予約する
-        </button>
-      </div>
 
       {/* ミニマルな背景 */}
       <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-neutral-100"></div>
@@ -242,22 +195,16 @@ export default function AnimatedHero() {
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4 md:px-8">
         <div id="center" className="relative w-full max-w-7xl h-full flex items-center justify-center">
           {/* 元のアニメーションテキスト */}
-          <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-[-60px] w-[200px] sm:w-[250px] md:w-[300px] h-[50px] sm:h-[60px] md:h-[75px] z-10 overflow-hidden">
-            <h2 className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-[5px] md:left-[10px] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-[200px] sm:w-[250px] md:w-[300px] h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-neutral-900" style={{ fontFamily: 'Ranade, sans-serif' }}>
-              ピル
-            </h2>
-            <h2 className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-[5px] md:left-[10px] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-[200px] sm:w-[250px] md:w-[300px] h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-neutral-900" style={{ fontFamily: 'Ranade, sans-serif' }}>
-              ED
-            </h2>
-            <h2 className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-[5px] md:left-[10px] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-[200px] sm:w-[250px] md:w-[300px] h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-neutral-900" style={{ fontFamily: 'Ranade, sans-serif' }}>
-              AGA
-            </h2>
+          <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[600px] h-[50px] sm:h-[60px] md:h-[75px] z-10 overflow-hidden">
+            {heroData.map((item, index) => (
+              <h2 key={index} className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-0 text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-max h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-neutral-900 whitespace-nowrap" style={{ fontFamily: 'Ranade, sans-serif' }}>{item.name}</h2>
+            ))}
           </div>
           
           {/* 画像コンテナ */}
           <div className="relative w-full sm:w-[85%] md:w-[70%] h-[50%] sm:h-[60%] md:h-[70%] flex items-center justify-center">
             {heroData.map((item, index) => (
-              <div key={index} id="image-container" className="absolute w-0 h-full overflow-hidden shadow-2xl rounded-lg">
+              <div key={index} id="image-container" className="absolute w-0 h-full overflow-hidden rounded-lg">
                 <div className="relative w-full h-full">
                   <img
                     src={item.image}

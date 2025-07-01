@@ -92,7 +92,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-24">
       <Breadcrumb items={breadcrumbItems} />
       
       {/* Hero Section */}

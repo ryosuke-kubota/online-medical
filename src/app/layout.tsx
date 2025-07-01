@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import Header from "./components/Header";
+import FloatingMenu from "./components/FloatingMenu";
+import FloatingCTA from "./components/FloatingCTA";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -36,8 +38,11 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="antialiased">
         <ClientBody>
+          {/* 全ページ共通のフローティング要素 */}
+          <FloatingMenu />
+          <FloatingCTA />
+          
           <div className="min-h-screen bg-white">
-            <Header />
             <main>{children}</main>
             
             {/* Footer - 全ページ共通 */}
