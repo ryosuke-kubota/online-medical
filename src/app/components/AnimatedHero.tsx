@@ -234,10 +234,10 @@ export default function AnimatedHero() {
       </div>
 
       {/* ミニマルなアクセント要素 - スマホ対応 */}
-      <div className="floating-element absolute top-1/4 left-2 sm:left-4 md:left-10 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-neutral-900 rounded-full"></div>
+      {/* <div className="floating-element absolute top-1/4 left-2 sm:left-4 md:left-10 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-neutral-900 rounded-full"></div>
       <div className="floating-element absolute top-1/3 right-4 sm:right-8 md:right-20 w-0.5 sm:w-1 h-6 sm:h-8 bg-neutral-900"></div>
       <div className="floating-element absolute bottom-1/4 left-1/4 w-6 sm:w-8 h-0.5 sm:h-1 bg-neutral-900"></div>
-      <div className="floating-element absolute bottom-1/3 right-1/3 w-2 sm:w-3 h-2 sm:h-3 bg-neutral-900 rotate-45"></div>
+      <div className="floating-element absolute bottom-1/3 right-1/3 w-2 sm:w-3 h-2 sm:h-3 bg-neutral-900 rotate-45"></div> */}
 
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4 md:px-8">
         <div id="center" className="relative w-full max-w-7xl h-full flex items-center justify-center">
