@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
+import Header from "./components/Header";
+import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +35,76 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className="antialiased">
-        <ClientBody>{children}</ClientBody>
+        <ClientBody>
+          <div className="min-h-screen bg-white">
+            <Header />
+            <main>{children}</main>
+            
+            {/* Footer - 全ページ共通 */}
+            <footer className="bg-gray-900 text-white py-20">
+              <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                  <div>
+                    <Image
+                      src="https://ext.same-assets.com/3284986432/991739575.svg"
+                      alt="Oops"
+                      width={120}
+                      height={40}
+                      className="filter brightness-0 invert mb-6"
+                    />
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center">
+                        <span className="text-xs">LINE</span>
+                      </div>
+                      <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center">
+                        <span className="text-xs">IG</span>
+                      </div>
+                      <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                        <span className="text-xs">X</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-4">診療メニュー</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li><Link href="#" className="hover:text-blue-400">男性AGA</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">ピル処方</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">ED治療</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">こころのお悩み</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">女性AGA</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">眠りのお悩み</Link></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-4">サービス</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li><Link href="#" className="hover:text-blue-400">花粉症</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">ニキビ治療</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">ダイエット漢方</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">高脂血症</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">汗のお悩み</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">まつ毛美容液</Link></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-4">企業情報</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li><Link href="#" className="hover:text-blue-400">運営会社</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">特定商取引法に基づく表示</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">利用規約</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">プライバシーポリシー</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">お知らせ</Link></li>
+                      <li><Link href="#" className="hover:text-blue-400">お問い合わせ</Link></li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                  <p>&copy; 2024 Oops. All rights reserved.</p>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </ClientBody>
       </body>
     </html>
   );

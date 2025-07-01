@@ -52,19 +52,21 @@ export default function Home() {
   ]
 
   const services = [
-    { name: "男性AGA", icon: "https://ext.same-assets.com/3284986432/901484803.gif" },
-    { name: "ピル処方", icon: "https://ext.same-assets.com/3284986432/1965986365.gif" },
-    { name: "ED治療", icon: "https://ext.same-assets.com/3284986432/2754074324.gif" },
-    { name: "こころのお悩み", icon: "https://ext.same-assets.com/3284986432/2410265565.gif" },
-    { name: "女性AGA", icon: "https://ext.same-assets.com/3284986432/1520618157.gif" },
-    { name: "眠りのお悩み", icon: "https://ext.same-assets.com/3284986432/248897485.gif" },
+    { name: "ED 早漏防止", icon: "https://ext.same-assets.com/3284986432/901484803.gif" },
+    { name: "インフルエンザ予防", icon: "https://ext.same-assets.com/3284986432/1965986365.gif" },
+    { name: "ドクターズコスメ", icon: "https://ext.same-assets.com/3284986432/2754074324.gif" },
+    { name: "メディカルスキンケア", icon: "https://ext.same-assets.com/3284986432/2410265565.gif" },
+    { name: "メディカルダイエット", icon: "https://ext.same-assets.com/3284986432/1520618157.gif" },
+    { name: "飲む日焼け止め", icon: "https://ext.same-assets.com/3284986432/248897485.gif" },
     { name: "花粉症", icon: "https://ext.same-assets.com/3284986432/2362979327.gif" },
-    { name: "ニキビ治療", icon: "https://ext.same-assets.com/3284986432/278996483.gif" },
-    { name: "ダイエット漢方", icon: "https://ext.same-assets.com/3284986432/593082522.gif" },
-    { name: "高脂血症", icon: "https://ext.same-assets.com/3284986432/523577315.gif" },
-    { name: "汗のお悩み", icon: "https://ext.same-assets.com/3284986432/3206766394.gif" },
-    { name: "痛み・吐き気", icon: "https://ext.same-assets.com/3284986432/2821135590.gif" },
-    { name: "まつ毛美容液", icon: "https://ext.same-assets.com/3284986432/622004978.gif" }
+    { name: "汗のお悩み", icon: "https://ext.same-assets.com/3284986432/278996483.gif" },
+    { name: "睡眠障害", icon: "https://ext.same-assets.com/3284986432/593082522.gif" },
+    { name: "性感染症", icon: "https://ext.same-assets.com/3284986432/523577315.gif" },
+    { name: "生活習慣病", icon: "https://ext.same-assets.com/3284986432/3206766394.gif" },
+    { name: "こころのお悩み", icon: "https://ext.same-assets.com/3284986432/2821135590.gif" },
+    { name: "AGA", icon: "https://ext.same-assets.com/3284986432/622004978.gif" },
+    { name: "女性不感症", icon: "https://ext.same-assets.com/3284986432/622004978.gif" },
+    { name: "ピル", icon: "https://ext.same-assets.com/3284986432/622004978.gif" }
   ]
 
   const medicines = [
@@ -174,7 +176,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
       {/* Animated Hero Section */}
       <AnimatedHero />
 
@@ -184,47 +186,14 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">About Oops</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Oopsは、スマートフォン一つで完結する革新的なオンライン診療サービスです。<br />
-                プライバシーを重視し、質の高い医療を身近にお届けします。
-              </p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">私たちのミッション</h3>
+                <h3 className="text-2xl font-bold text-gray-900">ここは、あなたのポケットにある“かかりつけ”</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  医療へのアクセスをより簡単に、より身近にすることで、すべての人が健康で充実した生活を送れる社会の実現を目指しています。従来の医療の枠を超え、テクノロジーの力で新しい医療体験を提供します。
+                心と体はいつでも完璧であるわけではなく、ちょっとした不調や不安は日々の中で誰にでも訪れます。面倒な通院も薬局の待ち時間も、すべてオンラインでまるっと完結。診察からお薬の処方、相談からフォローアップまで、まとまった手間を省いて、あなたの生活に寄り添う診療を提供します。時間や場所を選ばず、信頼できる医師とのつながりを当たり前に。頼りたいときに、すぐにアクセスできる安心を届けます。
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">アクセシビリティ</h4>
-                      <p className="text-sm text-gray-600">時間や場所を選ばず、必要な時に医療サービスを受けられます</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">プライバシー保護</h4>
-                      <p className="text-sm text-gray-600">個人情報の取り扱いに最大限の配慮をしています</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">質の高い医療</h4>
-                      <p className="text-sm text-gray-600">経験豊富な医師による丁寧な診察を提供します</p>
-                    </div>
-                  </div>
-                </div>
               </div>
               
               <div className="relative">
@@ -237,41 +206,6 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">24/7</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center p-6 bg-gray-50 rounded-xl">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">スマホで完結</h4>
-                <p className="text-gray-600 text-sm">予約から診察、薬の受け取りまで、すべてスマートフォンで完結します</p>
-              </div>
-              
-              <div className="text-center p-6 bg-gray-50 rounded-xl">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">安心・安全</h4>
-                <p className="text-gray-600 text-sm">厳格なセキュリティ基準に基づき、患者様の情報を安全に管理しています</p>
-              </div>
-              
-              <div className="text-center p-6 bg-gray-50 rounded-xl">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">専門医による診察</h4>
-                <p className="text-gray-600 text-sm">各分野の専門知識を持つ経験豊富な医師が診察を担当します</p>
               </div>
             </div>
           </div>
@@ -483,69 +417,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <Image
-                src="https://ext.same-assets.com/3284986432/991739575.svg"
-                alt="Oops"
-                width={120}
-                height={40}
-                className="filter brightness-0 invert mb-6"
-              />
-              <div className="flex gap-4">
-                <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center">
-                  <span className="text-xs">LINE</span>
-                </div>
-                <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center">
-                  <span className="text-xs">IG</span>
-                </div>
-                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                  <span className="text-xs">X</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">診療メニュー</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="#" className="hover:text-blue-400">男性AGA</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">ピル処方</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">ED治療</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">こころのお悩み</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">女性AGA</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">眠りのお悩み</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">サービス</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="#" className="hover:text-blue-400">花粉症</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">ニキビ治療</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">ダイエット漢方</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">高脂血症</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">汗のお悩み</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">まつ毛美容液</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">企業情報</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="#" className="hover:text-blue-400">運営会社</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">特定商取引法に基づく表示</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">利用規約</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">プライバシーポリシー</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">お知らせ</Link></li>
-                <li><Link href="#" className="hover:text-blue-400">お問い合わせ</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2024 Oops. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   )
 }
