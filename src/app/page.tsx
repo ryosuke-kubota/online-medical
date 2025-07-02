@@ -252,19 +252,23 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">All</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {services.map((service, index) => (
-              <div key={service.name} className="text-center group cursor-pointer">
-                <div className="relative w-20 h-20 mx-auto mb-3 overflow-hidden rounded-full service-icon">
-                  <Image
-                    src={service.icon}
-                    alt={service.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <span className="text-sm font-medium">{service.name}</span>
-              </div>
+              <Card key={service.name} className="overflow-hidden service-card cursor-pointer group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <CardContent className="p-6 text-center">
+                  <div className="relative w-16 h-16 mx-auto mb-4 overflow-hidden rounded-full service-icon">
+                    <Image
+                      src={service.icon}
+                      alt={service.name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    {service.name}
+                  </h3>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
