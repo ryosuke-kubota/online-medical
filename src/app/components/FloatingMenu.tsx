@@ -24,7 +24,7 @@ export default function FloatingMenu() {
   return (
     <>
       {/* フローティングロゴ（左上） */}
-      <div className="fixed top-6 left-6 z-50">
+      {/* <div className="fixed top-6 left-6 z-50">
         <div className="flex items-center gap-4">
           <Link href="/">
             <Image
@@ -36,13 +36,14 @@ export default function FloatingMenu() {
             />
           </Link>
         </div>
-      </div>
+      </div> */}
 
       {/* フローティングメニューボタン（右上） */}
-      <div className="fixed top-6 right-6 z-50 menu-container">
+      <div className="fixed top-4 right-6 z-50 menu-container">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="w-12 h-12 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+          className="w-12 h-12 bg-transparent  rounded-full flex items-center justify-center hover:scale-105 transition-all duration-300 group"
+          // className="w-12 h-12 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
         >
           <div className="flex flex-col gap-1">
             <div className={`w-5 h-0.5 bg-neutral-900 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>

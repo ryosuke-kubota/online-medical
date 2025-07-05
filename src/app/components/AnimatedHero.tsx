@@ -222,12 +222,12 @@ export default function AnimatedHero() {
           {/* 元のアニメーションテキスト */}
           <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-8rem)] lg:w-[900px] xl:w-[1100px] h-[50px] sm:h-[60px] md:h-[75px] z-10 overflow-hidden">
             {heroData.map((item, index) => (
-              <h2 key={index} className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-0 text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-max h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap drop-shadow-lg" style={{ fontFamily: 'Ranade, sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.3)' }}>{item.name}</h2>
+              <h2 key={index} className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-0 text-[26px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-max h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap drop-shadow-lg" style={{ fontFamily: 'Ranade, sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.3)' }}>{item.name}</h2>
             ))}
           </div>
           
-          {/* 画像コンテナ */}
-          <div className="relative w-full sm:w-[85%] md:w-[90%] h-[50%] sm:h-[60%] md:h-[80%] flex items-center justify-center">
+          {/* 画像コンテナ - スマホでは縦長、タブレット以上では横長 */}
+          <div className="relative w-full sm:w-[85%] md:w-[90%] h-[60%] sm:h-[60%] md:h-[80%] flex items-center justify-center">
             {heroData.map((item, index) => (
               <div key={index} id="image-container" className="absolute w-0 h-full overflow-hidden rounded-lg">
                 <div className="relative w-full h-full">

@@ -353,7 +353,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-8">LINEで相談&診療予約する</h2>
           <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg hover-scale">
-            Oops公式LINEアカウントはこちら
+            Oops公式LINE
           </Button>
         </div>
       </section>
