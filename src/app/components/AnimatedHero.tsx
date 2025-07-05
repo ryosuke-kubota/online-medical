@@ -11,36 +11,48 @@ export default function AnimatedHero() {
 
   const heroData = [
     {
-      name: "ED 早漏防止",
-      image: "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      name: "ドクターズコスメ",
+      image: "/images/hero/doctors-cosme.jpg",
       accent: "bg-blue-500"
     },
     {
-      name: "飲む日焼け止め",
-      image: "https://images.pexels.com/photos/3854884/pexels-photo-3854884.jpeg",
+      name: "メディアルスキンケア",
+      image: "/images/hero/medical-skincare.jpg",
       accent: "bg-purple-500"
     },
     {
-      name: "花粉症",
-      image: "https://images.pexels.com/photos/6311250/pexels-photo-6311250.jpeg",
+      name: "メディカルダイエット",
+      image: "/images/hero/medical-diet.jpg",
       accent: "bg-emerald-500"
     }
     ,
     {
-      name: "ピル",
-      image: "https://images.pexels.com/photos/3854884/pexels-photo-3854884.jpeg",
+      name: "飲む日焼け止め",
+      image: "/images/hero/sunscreen.jpg",
+      accent: "bg-emerald-500"
+    }
+    ,
+    {
+      name: "花粉症",
+      image: "/images/hero/pollen.jpg",
+      accent: "bg-emerald-500"
+    }
+    ,
+    {
+      name: "汗のお悩み",
+      image: "/images/hero/sweat.jpg",
+      accent: "bg-emerald-500"
+    }
+    ,
+    {
+      name: "性感染症",
+      image: "/images/hero/sex.jpg",
       accent: "bg-emerald-500"
     }
     ,
     {
       name: "こころのお悩み",
-      image: "https://images.pexels.com/photos/6311250/pexels-photo-6311250.jpeg",
-      accent: "bg-emerald-500"
-    }
-    ,
-    {
-      name: "AGA",
-      image: "https://images.pexels.com/photos/3854884/pexels-photo-3854884.jpeg",
+      image: "/images/hero/heart.jpg",
       accent: "bg-emerald-500"
     }
   ]
@@ -202,7 +214,7 @@ export default function AnimatedHero() {
           </div>
           
           {/* 画像コンテナ */}
-          <div className="relative w-full sm:w-[85%] md:w-[70%] h-[50%] sm:h-[60%] md:h-[70%] flex items-center justify-center">
+          <div className="relative w-full sm:w-[85%] md:w-[90%] h-[50%] sm:h-[60%] md:h-[90%] flex items-center justify-center">
             {heroData.map((item, index) => (
               <div key={index} id="image-container" className="absolute w-0 h-full overflow-hidden rounded-lg">
                 <div className="relative w-full h-full">

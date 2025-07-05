@@ -10,15 +10,6 @@ import nextConfig from "../../next.config.mjs";
 const BASE_PATH = nextConfig.basePath || "";
 
 export default function Home() {
-  const heroImages = [
-    "https://ext.same-assets.com/3284986432/649696560.jpeg",
-    "https://ext.same-assets.com/3284986432/3049966336.jpeg",
-    "https://ext.same-assets.com/3284986432/1355868134.jpeg",
-    "https://ext.same-assets.com/3284986432/3875375121.jpeg",
-    "https://ext.same-assets.com/3284986432/2427222098.jpeg",
-    "https://ext.same-assets.com/3284986432/395372390.jpeg",
-    "https://ext.same-assets.com/3284986432/1849124493.jpeg"
-  ]
 
   const brands = [
     {
@@ -52,21 +43,21 @@ export default function Home() {
   ]
 
   const services = [
-    { name: "ED 早漏防止", icon: "https://ext.same-assets.com/3284986432/901484803.gif" },
-    { name: "インフルエンザ予防", icon: "https://ext.same-assets.com/3284986432/1965986365.gif" },
-    { name: "ドクターズコスメ", icon: "https://ext.same-assets.com/3284986432/2754074324.gif" },
-    { name: "メディカルスキンケア", icon: "https://ext.same-assets.com/3284986432/2410265565.gif" },
-    { name: "メディカルダイエット", icon: "https://ext.same-assets.com/3284986432/1520618157.gif" },
-    { name: "飲む日焼け止め", icon: "https://ext.same-assets.com/3284986432/248897485.gif" },
-    { name: "花粉症", icon: "https://ext.same-assets.com/3284986432/2362979327.gif" },
-    { name: "汗のお悩み", icon: "https://ext.same-assets.com/3284986432/278996483.gif" },
-    { name: "睡眠障害", icon: "https://ext.same-assets.com/3284986432/593082522.gif" },
-    { name: "性感染症", icon: "https://ext.same-assets.com/3284986432/523577315.gif" },
-    { name: "生活習慣病", icon: "https://ext.same-assets.com/3284986432/3206766394.gif" },
-    { name: "こころのお悩み", icon: "https://ext.same-assets.com/3284986432/2821135590.gif" },
-    { name: "AGA", icon: "https://ext.same-assets.com/3284986432/622004978.gif" },
-    { name: "女性不感症", icon: "https://ext.same-assets.com/3284986432/622004978.gif" },
-    { name: "ピル", icon: "https://ext.same-assets.com/3284986432/622004978.gif" }
+    { name: "ED 早漏防止", icon: "/images/services/ed.png" },
+    { name: "インフルエンザ予防", icon: "/images/services/flu.png" },
+    { name: "ドクターズコスメ", icon: "/images/services/doctors-cosme.png" },
+    { name: "メディカルスキンケア", icon: "/images/services/medical-skincare.png" },
+    { name: "メディカルダイエット", icon: "/images/services/medical-diet.png" },
+    { name: "飲む日焼け止め", icon: "/images/services/sunscreen.png" },
+    { name: "花粉症", icon: "/images/services/pollen.png" },
+    { name: "汗のお悩み", icon: "/images/services/sweat.png" },
+    { name: "睡眠障害", icon: "/images/services/sleep.png" },
+    { name: "性感染症", icon: "/images/services/sex.png" },
+    { name: "生活習慣病", icon: "/images/services/life.png" },
+    { name: "こころのお悩み", icon: "/images/services/heart.png" },
+    { name: "AGA", icon: "/images/services/aga.png" },
+    { name: "女性不感症", icon: "/images/services/woman.png" },
+    { name: "ピル", icon: "/images/services/pil.png" }
   ]
 
   const medicines = [
@@ -135,22 +126,22 @@ export default function Home() {
     {
       title: "LINEで簡単予約",
       description: "OopsのLINE公式アカウントから簡単に予約できます。",
-      image: "https://ext.same-assets.com/3284986432/716333298.png"
+      image: "/images/how-to-use/how-to-use01.png"
     },
     {
       title: "問診票記入",
       description: "症状や希望に応じて問診票にお答えいただきます。",
-      image: "https://ext.same-assets.com/3284986432/851232475.png"
+      image: "/images/how-to-use/how-to-use02.png"
     },
     {
       title: "オンライン診察",
       description: "ビデオ通話で医師による診察を受けていただきます。",
-      image: "https://ext.same-assets.com/3284986432/2257691788.png"
+      image: "/images/how-to-use/how-to-use03.png"
     },
     {
       title: "薬のお届け",
       description: "処方された薬がご自宅に配送されます。",
-      image: "https://ext.same-assets.com/3284986432/2546847344.png"
+      image: "/images/how-to-use/how-to-use04.png"
     }
   ]
 
@@ -228,16 +219,9 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-black/30" />
                   <div className="absolute bottom-6 left-6 text-white">
-                    <Image
-                      src={brand.banner}
-                      alt={brand.title}
-                      width={200}
-                      height={60}
-                      className="mb-4"
-                    />
                     <h3 className="text-xl font-bold mb-2">{brand.title}</h3>
                     <p className="text-sm mb-4">{brand.subtitle}</p>
-                    <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black hover-scale">
+                    <Button variant="outline" className="text-black border-white hover:bg-white hover:text-black hover-scale">
                       View More
                     </Button>
                   </div>
@@ -256,7 +240,7 @@ export default function Home() {
             {services.map((service, index) => (
               <Card key={service.name} className="overflow-hidden service-card cursor-pointer group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
-                  <div className="relative w-16 h-16 mx-auto mb-4 overflow-hidden rounded-full service-icon">
+                  <div className="relative w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full service-icon">
                     <Image
                       src={service.icon}
                       alt={service.name}
@@ -345,7 +329,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {howToUse.map((step, index) => (
               <div key={step.title} className="text-center step-item">
-                <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden image-overlay">
+                <div className="relative w-full max-w-[200px] mx-auto h-auto aspect-square mb-6 rounded-lg overflow-hidden image-overlay">
                   <Image
                     src={step.image}
                     alt={step.title}
