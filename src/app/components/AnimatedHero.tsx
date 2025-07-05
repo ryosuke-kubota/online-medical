@@ -9,7 +9,17 @@ export default function AnimatedHero() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
 
-  const heroData = [
+  // 配列をシャッフルする関数
+  const shuffleArray = <T,>(array: T[]): T[] => {
+    const shuffled = [...array]
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    }
+    return shuffled
+  }
+
+  const originalHeroData = [
     {
       name: "ドクターズコスメ",
       image: "/images/hero/doctors-cosme.jpg",
@@ -56,6 +66,9 @@ export default function AnimatedHero() {
       accent: "bg-emerald-500"
     }
   ]
+
+  // シャッフルされたheroDataを状態として管理
+  const [heroData, setHeroData] = useState(() => shuffleArray(originalHeroData))
 
   useEffect(() => {
     if (typeof window !== 'undefined' && containerRef.current && isPlaying) {
@@ -207,14 +220,14 @@ export default function AnimatedHero() {
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4 md:px-8">
         <div id="center" className="relative w-full max-w-7xl h-full flex items-center justify-center">
           {/* 元のアニメーションテキスト */}
-          <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[600px] h-[50px] sm:h-[60px] md:h-[75px] z-10 overflow-hidden">
+          <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-8rem)] lg:w-[900px] xl:w-[1100px] h-[50px] sm:h-[60px] md:h-[75px] z-10 overflow-hidden">
             {heroData.map((item, index) => (
-              <h2 key={index} className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-0 text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-max h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-neutral-900 whitespace-nowrap" style={{ fontFamily: 'Ranade, sans-serif' }}>{item.name}</h2>
+              <h2 key={index} className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-0 text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-max h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap drop-shadow-lg" style={{ fontFamily: 'Ranade, sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.3)' }}>{item.name}</h2>
             ))}
           </div>
           
           {/* 画像コンテナ */}
-          <div className="relative w-full sm:w-[85%] md:w-[90%] h-[50%] sm:h-[60%] md:h-[90%] flex items-center justify-center">
+          <div className="relative w-full sm:w-[85%] md:w-[90%] h-[50%] sm:h-[60%] md:h-[80%] flex items-center justify-center">
             {heroData.map((item, index) => (
               <div key={index} id="image-container" className="absolute w-0 h-full overflow-hidden rounded-lg">
                 <div className="relative w-full h-full">
@@ -223,7 +236,11 @@ export default function AnimatedHero() {
                     alt={`Hero Image ${index + 1}`}
                     className="w-full h-full object-cover filter contrast-110 saturate-90"
                   />
-                  <div className="absolute inset-0 bg-black/10"></div>
+                  {/* 全体的なオーバーレイ */}
+                  <div className="absolute inset-0 bg-black/20"></div>
+                  {/* テキスト部分のグラデーションオーバーレイ */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </div>
               </div>
             ))}
