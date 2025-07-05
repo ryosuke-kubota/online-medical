@@ -181,16 +181,16 @@ export default function Home() {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">ここは、あなたのポケットにある“かかりつけ”</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-center text-2xl md:text-3xl font-bold text-gray-900 leading-9">ここは、<br />あなたのポケットにある<br />“かかりつけ”</h3>
+                <p className="text-sm md:text-lg text-gray-600 leading-7">
                 心と体はいつでも完璧であるわけではなく、ちょっとした不調や不安は日々の中で誰にでも訪れます。面倒な通院も薬局の待ち時間も、すべてオンラインでまるっと完結。診察からお薬の処方、相談からフォローアップまで、まとまった手間を省いて、あなたの生活に寄り添う診療を提供します。時間や場所を選ばず、信頼できる医師とのつながりを当たり前に。頼りたいときに、すぐにアクセスできる安心を届けます。
                 </p>
               </div>
               
               <div className="relative">
-                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-square w-full md:aspect-auto md:h-96 md:w-auto rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    src="/images/about.png"
                     alt="オンライン診療の様子"
                     fill
                     className="object-cover"
@@ -236,11 +236,11 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">All</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-6">
             {services.map((service, index) => (
               <Card key={service.name} className="overflow-hidden service-card cursor-pointer group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6 text-center">
-                  <div className="relative w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full service-icon">
+                  <div className="relative w-16 sm:w-24 h-16 sm:h-24 mx-auto mb-4 overflow-hidden rounded-full service-icon">
                     <Image
                       src={service.icon}
                       alt={service.name}
@@ -248,7 +248,7 @@ export default function Home() {
                       className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-xs sm:text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                     {service.name}
                   </h3>
                 </CardContent>
@@ -306,7 +306,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {features.map((feature, index) => (
               <div key={feature.title} className="text-center feature-item">
-                <div className="relative w-80 h-60 mx-auto mb-6 rounded-lg overflow-hidden image-overlay">
+                <div className="relative w-full max-w-80 h-60 mx-auto mb-6 rounded-lg overflow-hidden image-overlay">
                   <Image
                     src={feature.image}
                     alt={feature.title}
@@ -337,7 +337,7 @@ export default function Home() {
                     className="object-cover"
                   />
                 </div>
-                <div className="w-8 h-8 gradient-blue text-white rounded-full flex items-center justify-center mx-auto mb-4 hover-scale">
+                <div className="w-8 h-8 bg-[#4DA8DA] text-white rounded-full flex items-center justify-center mx-auto mb-4 hover-scale">
                   {index + 1}
                 </div>
                 <h3 className="text-lg font-bold mb-2">{step.title}</h3>
@@ -349,11 +349,18 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-500 to-purple-600">
+      <section className="py-20 bg-[#4DA8DA]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-8">LINEで相談&診療予約する</h2>
-          <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg hover-scale">
-            Oops公式LINE
+          <Button size="lg" className="bg-white text-black px-10 py-8 rounded-full text-base font-medium flex items-center gap-2 hover:shadow-xl hover:scale-105 transition-all duration-300 mx-auto">
+            <Image 
+              src="/images/line-icon.png"
+              alt="LINE"
+              className="w-10 h-10"
+              width={20}
+              height={20}
+            />
+            診療予約する
           </Button>
         </div>
       </section>

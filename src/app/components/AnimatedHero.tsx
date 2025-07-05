@@ -227,7 +227,7 @@ export default function AnimatedHero() {
           </div>
           
           {/* 画像コンテナ - スマホでは縦長、タブレット以上では横長 */}
-          <div className="relative w-full sm:w-[85%] md:w-[90%] h-[60%] sm:h-[60%] md:h-[80%] flex items-center justify-center">
+          <div className="relative w-full sm:w-[85%] md:w-[80%] h-[60%] sm:h-[60%] md:h-[80%] flex items-center justify-center">
             {heroData.map((item, index) => (
               <div key={index} id="image-container" className="absolute w-0 h-full overflow-hidden rounded-lg">
                 <div className="relative w-full h-full">
@@ -237,7 +237,7 @@ export default function AnimatedHero() {
                     className="w-full h-full object-cover filter contrast-110 saturate-90"
                   />
                   {/* 全体的なオーバーレイ */}
-                  <div className="absolute inset-0 bg-black/20"></div>
+                  <div className="absolute inset-0 bg-black/10"></div>
                   {/* テキスト部分のグラデーションオーバーレイ */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/30 to-transparent"></div>
