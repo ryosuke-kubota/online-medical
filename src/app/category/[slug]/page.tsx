@@ -79,8 +79,9 @@ const fetchCategoryData = async (slug: string): Promise<CategoryData | null> => 
   return categories[slug];
 };
 
-export default async function CategoryPage({ params }: { params: { slug: string } }) {
-  const category = await fetchCategoryData(params.slug);
+export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const category = await fetchCategoryData(slug);
 
   if (!category) {
     notFound();
@@ -88,7 +89,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
-    { label: category.title, href: `/category/${params.slug}` },
+    { label: category.title, href: `/category/${slug}` },
   ];
 
   return (
