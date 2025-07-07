@@ -25,59 +25,66 @@ interface CategoryData {
   products: Product[];
 }
 
-// This is a placeholder for where you might fetch your category data
-const fetchCategoryData = async (slug: string): Promise<CategoryData | null> => {
-  // In a real application, you would fetch this data from a CMS or database.
-  const categories: { [key: string]: CategoryData } = {
-    sweat: {
-      title: '汗のお悩み',
-      description: '多汗症など、汗に関するお悩みを解決します。',
-      about: {
-        title: 'このカテゴリについて',
-        content: '汗のお悩みは多くの方が抱える身近な問題です。多汗症、汗の臭い、汗染みなど、様々な症状に対して適切な治療法や対策をご提案いたします。当クリニックでは、患者様一人ひとりの症状に合わせたオーダーメイドの治療を行っております。',
-        features: [
-          '専門医による詳細な診断',
-          '最新の治療技術を使用',
-          '個人に合わせた治療プラン',
-          'アフターケアも充実'
-        ]
-      },
-      products: [
-        {
-          id: 1,
-          name: 'ボトックス注射',
-          description: '多汗症に効果的な治療法です。汗腺の働きを抑制し、汗の分泌を大幅に減少させます。',
-          price: '¥50,000〜',
-          duration: '約30分',
-          image: '/products/botox.jpg'
-        },
-        {
-          id: 2,
-          name: 'イオントフォレーシス',
-          description: '電気を使った非侵襲的な治療法。手のひらや足の裏の多汗症に特に効果的です。',
-          price: '¥15,000〜',
-          duration: '約45分',
-          image: '/products/iontophoresis.jpg'
-        },
-        {
-          id: 3,
-          name: '制汗剤処方',
-          description: '医療用の強力な制汗剤を処方いたします。市販品では効果が不十分な方におすすめです。',
-          price: '¥3,000〜',
-          duration: '約15分',
-          image: '/products/antiperspirant.jpg'
-        }
+// Category data - in a real application, this would come from a CMS or database
+const categories: { [key: string]: CategoryData } = {
+  sweat: {
+    title: '汗のお悩み',
+    description: '多汗症など、汗に関するお悩みを解決します。',
+    about: {
+      title: 'このカテゴリについて',
+      content: '汗のお悩みは多くの方が抱える身近な問題です。多汗症、汗の臭い、汗染みなど、様々な症状に対して適切な治療法や対策をご提案いたします。当クリニックでは、患者様一人ひとりの症状に合わせたオーダーメイドの治療を行っております。',
+      features: [
+        '専門医による詳細な診断',
+        '最新の治療技術を使用',
+        '個人に合わせた治療プラン',
+        'アフターケアも充実'
       ]
     },
-    // Add other categories here
-  };
+    products: [
+      {
+        id: 1,
+        name: 'ボトックス注射',
+        description: '多汗症に効果的な治療法です。汗腺の働きを抑制し、汗の分泌を大幅に減少させます。',
+        price: '¥50,000〜',
+        duration: '約30分',
+        image: '/products/botox.jpg'
+      },
+      {
+        id: 2,
+        name: 'イオントフォレーシス',
+        description: '電気を使った非侵襲的な治療法。手のひらや足の裏の多汗症に特に効果的です。',
+        price: '¥15,000〜',
+        duration: '約45分',
+        image: '/products/iontophoresis.jpg'
+      },
+      {
+        id: 3,
+        name: '制汗剤処方',
+        description: '医療用の強力な制汗剤を処方いたします。市販品では効果が不十分な方におすすめです。',
+        price: '¥3,000〜',
+        duration: '約15分',
+        image: '/products/antiperspirant.jpg'
+      }
+    ]
+  },
+  // Add other categories here
+};
 
+// This is a placeholder for where you might fetch your category data
+const fetchCategoryData = async (slug: string): Promise<CategoryData | null> => {
   if (!categories[slug]) {
     return null;
   }
 
   return categories[slug];
 };
+
+// Generate static params for all available categories
+export async function generateStaticParams() {
+  return Object.keys(categories).map((slug) => ({
+    slug: slug,
+  }));
+}
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
