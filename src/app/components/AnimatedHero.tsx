@@ -254,11 +254,9 @@ export default function AnimatedHero() {
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               {/* ヘッダー */}
               <div className="text-center">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 mb-2" style={{ fontFamily: 'Ranade, sans-serif' }}>
-                  OOPS
-                </h2>
-                <p className="text-xs sm:text-sm md:text-base text-neutral-700">スマホで完結する<br />
-                新しい医療体験</p>
+                <Image src={'/images/logo.png'} className='w-full' width={150} height={50} alt="薬の桃太郎" />
+                <p className="text-xs sm:text-sm md:text-lg font-bold text-neutral-700">薬の桃太郎のオンライン診療で<br />
+                鬼（病気）（悩み）を退治する</p>
               </div>
             </div>
           </div>
