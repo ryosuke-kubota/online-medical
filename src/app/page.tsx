@@ -71,7 +71,7 @@ export default function Home() {
   ]
 
   const services = [
-    { name: "ED 早漏防止", icon: "/images/services/ed.png" },
+    { name: "ED 早漏防止", icon: `${BASE_PATH}/images/services/ed.png` },
     { name: "インフルエンザ予防", icon: `${BASE_PATH}/images/services/flu.png` },
     { name: "ドクターズコスメ", icon: `${BASE_PATH}/images/services/doctors-cosme.png` },
     { name: "メディカルスキンケア", icon: `${BASE_PATH}/images/services/medical-skincare.png` },
@@ -84,8 +84,8 @@ export default function Home() {
     { name: "生活習慣病", icon: `${BASE_PATH}/images/services/life.png` },
     { name: "こころのお悩み", icon: `${BASE_PATH}/images/services/heart.png` },
     { name: "AGA", icon: `${BASE_PATH}/images/services/aga.png` },
-    { name: "女性不感症", icon: "/images/services/woman.png" },
-    { name: "ピル", icon: "/images/services/pil.png" }
+    { name: "女性不感症", icon: `${BASE_PATH}/images/services/woman.png` },
+    { name: "ピル", icon: `${BASE_PATH}/images/services/pil.png` }
   ]
 
   const medicines = [
