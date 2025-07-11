@@ -1,49 +1,77 @@
+'use client'
+
+import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Image from "next/image"
 import Link from "next/link"
 import AnimatedHero from "@/components/AnimatedHero"
+import MedicineModal from "@/components/MedicineModal"
 
 import nextConfig from "../../next.config.mjs";
 
 const BASE_PATH = nextConfig.basePath || "";
 
+interface Medicine {
+  title: string
+  category?: string
+  price: string
+  originalPrice: string
+  image: string
+  subtitle?: string
+  description?: string
+  drugName?: string
+  details?: string
+}
+
 export default function Home() {
+  const [selectedMedicine, setSelectedMedicine] = useState<Medicine | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleMedicineClick = (medicine: Medicine) => {
+    setSelectedMedicine(medicine)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setSelectedMedicine(null)
+  }
 
   const brands = [
     {
       id: "hair",
       title: "AGA診療、ぜんぶオンラインで",
       subtitle: "ENJOY YOUR STYLE FOREVER.",
-      bg: "https://ext.same-assets.com/3284986432/2367239611.jpeg",
+      bg: "/images/brand/brand1.png",
       banner: "https://ext.same-assets.com/3284986432/2873164595.png"
     },
     {
       id: "womb",
       title: "子宮との365日に、ちょっぴりピースを。",
       subtitle: "LOVE & PEACE WITH WOMB.",
-      bg: "https://ext.same-assets.com/3284986432/2088257281.jpeg",
+      bg: "/images/brand/brand2.png",
       banner: "https://ext.same-assets.com/3284986432/698188018.png"
     },
     {
       id: "love",
       title: "ED診療、ぜんぶオンラインで",
       subtitle: "DON'T WORRY. WE ARE THE SAME.",
-      bg: "https://ext.same-assets.com/3284986432/2178503383.jpeg",
+      bg: "/images/brand/brand3.png",
       banner: "https://ext.same-assets.com/3284986432/3356119166.png"
     },
     {
       id: "heart",
       title: "いろんなこころに、すっと頼れる診療を",
       subtitle: "ALWAYS BY YOUR SIDE.",
-      bg: "https://ext.same-assets.com/3284986432/121544902.jpeg",
+      bg: "/images/brand/brand4.png",
       banner: "https://ext.same-assets.com/3284986432/765577380.png"
     }
   ]
 
   const services = [
-    { name: "ED 早漏防止", icon: "/images/services/ed.png" },
+    // { name: "ED 早漏防止", icon: "/images/services/ed.png" },
     { name: "インフルエンザ予防", icon: "/images/services/flu.png" },
     { name: "ドクターズコスメ", icon: "/images/services/doctors-cosme.png" },
     { name: "メディカルスキンケア", icon: "/images/services/medical-skincare.png" },
@@ -52,55 +80,69 @@ export default function Home() {
     { name: "花粉症", icon: "/images/services/pollen.png" },
     { name: "汗のお悩み", icon: "/images/services/sweat.png" },
     { name: "睡眠障害", icon: "/images/services/sleep.png" },
-    { name: "性感染症", icon: "/images/services/sex.png" },
+    // { name: "性感染症", icon: "/images/services/sex.png" },
     { name: "生活習慣病", icon: "/images/services/life.png" },
-    { name: "こころのお悩み", icon: "/images/services/heart.png" },
+    // { name: "こころのお悩み", icon: "/images/services/heart.png" },
     { name: "AGA", icon: "/images/services/aga.png" },
-    { name: "女性不感症", icon: "/images/services/woman.png" },
-    { name: "ピル", icon: "/images/services/pil.png" }
+    // { name: "女性不感症", icon: "/images/services/woman.png" },
+    // { name: "ピル", icon: "/images/services/pil.png" }
   ]
 
   const medicines = [
     {
       title: "5種類から選べるAGA治療薬セット",
-      category: "AGA治療薬",
+      category: "男性AGA",
+      drugName: "フィナステリド",
       price: "1,900",
       originalPrice: "2,090",
-      image: "https://ext.same-assets.com/3284986432/3515286607.jpeg"
+      image: "https://ext.same-assets.com/3284986432/3515286607.jpeg",
+      details: "5α還元酵素阻害薬でAGAの根本治療薬です。服用することでヘアサイクルを正常化し、AGAを改善します。"
     },
     {
       title: "5種類から選べるAGA治療薬セット",
-      category: "AGA治療薬",
+      category: "男性AGA",
+      drugName: "デュタステリド",
       price: "4,980",
       originalPrice: "5,478",
-      image: "https://ext.same-assets.com/3284986432/3755871950.jpeg"
+      image: "https://ext.same-assets.com/3284986432/3755871950.jpeg",
+      details: "フィナステリドよりも強力な5α還元酵素阻害薬です。より効果的なAGA治療が期待できます。"
     },
     {
       title: "AGA治療薬",
-      category: "AGA治療薬",
+      category: "男性AGA",
+      drugName: "ミノキシジル",
       price: "1,800",
       originalPrice: "1,980",
-      image: "https://ext.same-assets.com/3284986432/1981089046.jpeg"
+      image: "https://ext.same-assets.com/3284986432/1981089046.jpeg",
+      details: "血管拡張作用により毛根への血流を改善し、発毛を促進する外用薬です。"
     },
     {
       title: "低用量ピル",
+      category: "女性の健康",
+      drugName: "トリキュラー",
       price: "2,350",
       originalPrice: "2,585",
-      image: "https://ext.same-assets.com/3284986432/1271733455.jpeg"
+      image: "https://ext.same-assets.com/3284986432/1271733455.jpeg",
+      details: "避妊効果に加え、月経周期の安定化や月経困難症の改善にも効果があります。"
     },
     {
       title: "バイアグラジェネリック",
       category: "ED治療薬",
+      drugName: "シルデナフィル",
       subtitle: "1回あたり136円〜",
       price: "7,900",
       originalPrice: "8,690",
-      image: "https://ext.same-assets.com/3284986432/1016171196.jpeg"
+      image: "https://ext.same-assets.com/3284986432/1016171196.jpeg",
+      details: "PDE5阻害薬として血管を拡張し、勃起機能を改善します。服用後約1時間で効果が現れます。"
     },
     {
       title: "花粉症治療薬",
+      category: "アレルギー",
+      drugName: "アレグラ",
       price: "2,500",
       originalPrice: "2,750",
-      image: "https://ext.same-assets.com/3284986432/902400015.jpeg"
+      image: "https://ext.same-assets.com/3284986432/902400015.jpeg",
+      details: "第2世代抗ヒスタミン薬で、眠気が少なく花粉症の症状を効果的に抑制します。"
     }
   ]
 
@@ -125,7 +167,7 @@ export default function Home() {
   const howToUse = [
     {
       title: "LINEで簡単予約",
-      description: "OopsのLINE公式アカウントから簡単に予約できます。",
+      description: "薬の桃太郎のLINE公式アカウントから簡単に予約できます。",
       image: "/images/how-to-use/how-to-use01.png"
     },
     {
@@ -148,19 +190,19 @@ export default function Home() {
   const magazines = [
     {
       title: "俳優　松㟢 翔平さん",
-      brand: "Oops LOVE",
+      brand: "MOMOTARO LOVE",
       excerpt: "「こんなにも大好きなのに、できない。それが苦しかった。」",
       image: "https://ext.same-assets.com/3284986432/749654993.jpeg"
     },
     {
       title: "医師　佐藤 明男",
-      brand: "Oops HAIR",
+      brand: "MOMOTARO HAIR",
       excerpt: "「AGA治療のほんと、お話しします」",
       image: "https://ext.same-assets.com/3284986432/163125431.jpeg"
     },
     {
       title: "美容師　Ryutaro",
-      brand: "Oops HAIR",
+      brand: "MOMOTARO HAIR",
       excerpt: "「服装とヘアはセット」だから、お店にはご自身の好きなスタイルで来てください",
       image: "https://ext.same-assets.com/3284986432/515982478.jpeg"
     }
@@ -176,7 +218,15 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">薬の桃太郎について</h2>
+              <div className="text-4xl font-bold text-gray-900 mb-6 flex items-center justify-center">
+                <Image
+                  src="/images/logo.png"
+                  alt="薬の桃太郎"
+                  width={200}
+                  height={60}
+                  className="h-24 w-auto"
+                />
+                <span className='text-xl mt-4'>について</span></div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
@@ -203,11 +253,11 @@ export default function Home() {
             {/* 特長セクション */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+                {/* <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
-                </div>
+                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">いつでもどこでも簡単診療</h4>
                 <p className="text-gray-600 text-sm leading-6">
                   スマホやPCから24時間いつでもアクセス可能。思い立ったらすぐに専門医とつながり、面倒な移動や長い待ち時間は一切なし。
@@ -215,11 +265,11 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4">
+                {/* <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                </div>
+                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">予約制で待ち時間ゼロ</h4>
                 <p className="text-gray-600 text-sm leading-6">
                   ご都合のよい日時を選ぶだけ。予約時間になればすぐチャットまたはビデオ通話で問診／診察がスタートします。
@@ -227,11 +277,11 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-4">
+                {/* <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
-                </div>
+                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">安心・安全の専門医処方</h4>
                 <p className="text-gray-600 text-sm leading-6">
                   各分野のプロフェッショナル医師が、丁寧な問診をもとに最適な薬を処方。万一のフォローアップまでしっかりサポートします。
@@ -239,11 +289,11 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
+                {/* <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
-                </div>
+                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">プライバシー厳守</h4>
                 <p className="text-gray-600 text-sm leading-6">
                   全てオンラインで完結するから、周りの目を気にせず診療OK。プライバシーがしっかり守られます。
@@ -251,11 +301,11 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
+                {/* <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                </div>
+                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">翌日お届けの迅速配送</h4>
                 <p className="text-gray-600 text-sm leading-6">
                   処方した薬は最短で翌日にはご自宅へ。まるで桃から飛び出したキジのように、素早く手元にお届けします。
@@ -277,7 +327,7 @@ export default function Home() {
       {/* Brand Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">Brand</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">ピックアップ</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
             {brands.map((brand) => (
               <div key={brand.id} className="relative group cursor-pointer overflow-hidden rounded-2xl brand-card card-hover">
@@ -306,7 +356,7 @@ export default function Home() {
       {/* All Services */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">All</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">診療科目</h2>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-6">
             {services.map((service, index) => (
               <Card key={service.name} className="overflow-hidden service-card cursor-pointer group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -332,7 +382,7 @@ export default function Home() {
       {/* Medicine Cards */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Medicine</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">お薬</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {medicines.slice(0, 6).map((medicine, index) => (
               <Card key={`medicine-${index}`} className="overflow-hidden medicine-card">
@@ -357,10 +407,16 @@ export default function Home() {
                     <span className="text-sm text-gray-500 line-through">¥{medicine.originalPrice}</span>
                   </div>
                   <div className="flex gap-2">
-                    <Button className="flex-1 hover-scale" variant="outline">詳細を見る</Button>
-                    <Button className="bg-green-500 hover:bg-green-600 text-white hover-scale">
-                      診療予約する
+                    <Button
+                      className="flex-1 hover-scale"
+                      variant="outline"
+                      onClick={() => handleMedicineClick(medicine)}
+                    >
+                      詳細を見る
                     </Button>
+                    {/* <Button className="bg-green-500 hover:bg-green-600 text-white hover-scale">
+                      診療予約する
+                    </Button> */}
                   </div>
                 </CardContent>
               </Card>
@@ -372,7 +428,7 @@ export default function Home() {
       {/* Features */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">Features</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">特徴</h2>
           <p className="text-center text-gray-600 mb-16">薬の桃太郎が選ばれる3つの理由</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {features.map((feature, index) => (
@@ -396,7 +452,7 @@ export default function Home() {
       {/* How to Use */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">How to use</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">ご利用の流れ</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {howToUse.map((step, index) => (
               <div key={step.title} className="text-center step-item">
@@ -439,7 +495,7 @@ export default function Home() {
       {/* FAQ */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">FAQ</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">よくあるご質問</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="border-b pb-6 faq-item">
               <h3 className="font-bold text-lg mb-2">薬の桃太郎のサービス内容を教えてください</h3>
@@ -458,7 +514,7 @@ export default function Home() {
       </section>
 
       {/* Magazine */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">Magazine</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -481,7 +537,14 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* Medicine Modal */}
+      <MedicineModal
+        medicine={selectedMedicine}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
 
     </>
   )

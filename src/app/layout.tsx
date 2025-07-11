@@ -51,23 +51,12 @@ export default function RootLayout({
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                   <div>
                     <Image
-                      src="https://ext.same-assets.com/3284986432/991739575.svg"
-                      alt="Oops"
+                      src="/images/logo_w.png"
+                      alt="薬の桃太郎"
                       width={120}
                       height={40}
-                      className="filter brightness-0 invert mb-6"
+                      className="mb-6 w-auto h-20"
                     />
-                    <div className="flex gap-4">
-                      <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center">
-                        <span className="text-xs">LINE</span>
-                      </div>
-                      <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center">
-                        <span className="text-xs">IG</span>
-                      </div>
-                      <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-xs">X</span>
-                      </div>
-                    </div>
                   </div>
                   <div>
                     <h4 className="font-bold mb-4">診療メニュー</h4>
@@ -104,7 +93,7 @@ export default function RootLayout({
                   </div>
                 </div>
                 <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-                  <p>&copy; 2024 Oops. All rights reserved.</p>
+                  <p>&copy; 2025 薬の桃太郎. All rights reserved.</p>
                 </div>
               </div>
             </footer>

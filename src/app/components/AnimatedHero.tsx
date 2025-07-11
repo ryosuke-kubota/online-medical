@@ -68,7 +68,14 @@ export default function AnimatedHero() {
   ]
 
   // シャッフルされたheroDataを状態として管理
-  const [heroData, setHeroData] = useState(() => shuffleArray(originalHeroData))
+  const [heroData, setHeroData] = useState(originalHeroData)
+
+  useEffect(() => {
+    // クライアントサイドでのみシャッフルを実行
+    if (typeof window !== 'undefined') {
+      setHeroData(shuffleArray(originalHeroData))
+    }
+  }, [])
 
   useEffect(() => {
     if (typeof window !== 'undefined' && containerRef.current && isPlaying) {
