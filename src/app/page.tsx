@@ -217,23 +217,15 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="text-4xl font-bold text-gray-900 mb-6 flex items-center justify-center">
-                <Image
-                  src={`${BASE_PATH}/images/logo.png`}
-                  alt="薬の桃太郎"
-                  width={200}
-                  height={60}
-                  className="h-16 md:h-24 w-auto"
-                />
-                <span className='text-xs md:text-xl mt-3 md:mt-4'>について</span></div>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 md:py-20">
               <div className="space-y-6">
-                <h3 className="text-center text-2xl md:text-3xl font-bold text-gray-900 leading-9">薬の桃太郎が守る<br />"健康の宝"</h3>
-                <p className="text-sm md:text-lg text-gray-600 leading-7">
-                  日本の昔話「桃太郎」のように、私たちは「薬」を武器にして、皆さまの"健康という宝"をお守りします。<br /><br />遠く離れた場所からでも――まるで鬼退治に出かける主人公のように――以下の特長で病気や悩みの"鬼"をスムーズに撃退します。
+                <h3 className="text-left text-2xl md:text-4xl font-bold text-gray-900 leading-[2] md:leading-[2]">薬の桃太郎が守る<br className='md:hidden' />"健康の宝"</h3>
+                <p className="text-sm md:text-xl text-black font-bold leading-[2.6] md:leading-[2.6]">
+                  日本の昔話「桃太郎」のように、私たちは「薬」を武器にして、皆さまの"健康という宝"をお守りします。
+                  <br /><br />
+                  遠く離れた場所からでも<br />
+                  まるで鬼退治に出かける主人公のように<br />
+                  以下の特長で病気や悩みの"鬼"をスムーズに撃退します。
                 </p>
               </div>
               

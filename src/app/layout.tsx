@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import Header from "./components/Header";
@@ -12,13 +12,9 @@ import nextConfig from "../../next.config.mjs";
 
 const BASE_PATH = nextConfig.basePath || "";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const notoSansJP = Noto_Sans_JP({
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-noto-sans-jp",
   subsets: ["latin"],
 });
 
@@ -64,12 +60,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ja" className={notoSansJP.variable}>
       <head>
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=ranade@700,300,2,701,401,101,100,400,1,500,501,301&f[]=excon@400,900,700,500,300,100,1&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body suppressHydrationWarning className="antialiased">
         <ClientBody>
