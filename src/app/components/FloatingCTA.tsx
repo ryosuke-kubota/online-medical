@@ -17,12 +17,12 @@ export default function FloatingCTA() {
     <div className="fixed bottom-6 right-6 z-50">
       <button 
         onClick={handleCTAClick}
-        className="bg-[#FFD66B] text-black px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm font-medium flex items-center gap-2"
+        className="bg-[#FFD66B] text-black px-4 md:px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm font-medium flex items-center gap-2"
       >
         <Image 
           src={`${BASE_PATH}/images/line-icon.png`}
           alt="LINE"
-          className="w-10 h-10"
+          className="w-6 h-6 md:w-10 md:h-10"
           width={20}
           height={20}
         />

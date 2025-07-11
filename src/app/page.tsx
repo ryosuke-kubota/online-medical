@@ -71,7 +71,7 @@ export default function Home() {
   ]
 
   const services = [
-    // { name: "ED 早漏防止", icon: "/images/services/ed.png" },
+    { name: "ED 早漏防止", icon: "/images/services/ed.png" },
     { name: "インフルエンザ予防", icon: `${BASE_PATH}/images/services/flu.png` },
     { name: "ドクターズコスメ", icon: `${BASE_PATH}/images/services/doctors-cosme.png` },
     { name: "メディカルスキンケア", icon: `${BASE_PATH}/images/services/medical-skincare.png` },
@@ -80,12 +80,12 @@ export default function Home() {
     { name: "花粉症", icon: `${BASE_PATH}/images/services/pollen.png` },
     { name: "汗のお悩み", icon: `${BASE_PATH}/images/services/sweat.png` },
     { name: "睡眠障害", icon: `${BASE_PATH}/images/services/sleep.png` },
-    // { name: "性感染症", icon: `${BASE_PATH}/images/services/sex.png` },
+    { name: "性感染症", icon: `${BASE_PATH}/images/services/sex.png` },
     { name: "生活習慣病", icon: `${BASE_PATH}/images/services/life.png` },
-    // { name: "こころのお悩み", icon: `${BASE_PATH}/images/services/heart.png` },
+    { name: "こころのお悩み", icon: `${BASE_PATH}/images/services/heart.png` },
     { name: "AGA", icon: `${BASE_PATH}/images/services/aga.png` },
-    // { name: "女性不感症", icon: "/images/services/woman.png" },
-    // { name: "ピル", icon: "/images/services/pil.png" }
+    { name: "女性不感症", icon: "/images/services/woman.png" },
+    { name: "ピル", icon: "/images/services/pil.png" }
   ]
 
   const medicines = [
@@ -224,9 +224,9 @@ export default function Home() {
                   alt="薬の桃太郎"
                   width={200}
                   height={60}
-                  className="h-24 w-auto"
+                  className="h-16 md:h-24 w-auto"
                 />
-                <span className='text-xl mt-4'>について</span></div>
+                <span className='text-xs md:text-xl mt-3 md:mt-4'>について</span></div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
@@ -251,7 +251,7 @@ export default function Home() {
             </div>
 
             {/* 特長セクション */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-16">
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 {/* <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -259,7 +259,7 @@ export default function Home() {
                   </svg>
                 </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">いつでもどこでも簡単診療</h4>
-                <p className="text-gray-600 text-sm leading-6">
+                <p className="text-gray-600 text-xs md:text-sm leading-6">
                   スマホやPCから24時間いつでもアクセス可能。思い立ったらすぐに専門医とつながり、面倒な移動や長い待ち時間は一切なし。
                 </p>
               </div>
@@ -271,7 +271,7 @@ export default function Home() {
                   </svg>
                 </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">予約制で待ち時間ゼロ</h4>
-                <p className="text-gray-600 text-sm leading-6">
+                <p className="text-gray-600 text-xs md:text-sm leading-6">
                   ご都合のよい日時を選ぶだけ。予約時間になればすぐチャットまたはビデオ通話で問診／診察がスタートします。
                 </p>
               </div>
@@ -283,7 +283,7 @@ export default function Home() {
                   </svg>
                 </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">安心・安全の専門医処方</h4>
-                <p className="text-gray-600 text-sm leading-6">
+                <p className="text-gray-600 text-xs md:text-sm leading-6">
                   各分野のプロフェッショナル医師が、丁寧な問診をもとに最適な薬を処方。万一のフォローアップまでしっかりサポートします。
                 </p>
               </div>
@@ -295,7 +295,7 @@ export default function Home() {
                   </svg>
                 </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">プライバシー厳守</h4>
-                <p className="text-gray-600 text-sm leading-6">
+                <p className="text-gray-600 text-xs md:text-sm leading-6">
                   全てオンラインで完結するから、周りの目を気にせず診療OK。プライバシーがしっかり守られます。
                 </p>
               </div>
@@ -307,16 +307,16 @@ export default function Home() {
                   </svg>
                 </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">翌日お届けの迅速配送</h4>
-                <p className="text-gray-600 text-sm leading-6">
+                <p className="text-gray-600 text-xs md:text-sm leading-6">
                   処方した薬は最短で翌日にはご自宅へ。まるで桃から飛び出したキジのように、素早く手元にお届けします。
                 </p>
               </div>
             </div>
 
             {/* 締めくくりメッセージ */}
-            <div className="text-center bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">手軽さ × 安心感 × スピード</h3>
-              <p className="text-lg text-gray-700 leading-8 max-w-4xl mx-auto">
+            <div className="text-center bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl">
+              <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-4">手軽さ × 安心感 × スピード</h3>
+              <p className="text-xs md:text-lg text-gray-700 leading-8 max-w-4xl mx-auto">
                 薬の桃太郎は、「手軽さ × 安心感 × スピード」を兼ね備えた新しいオンライン診療サービスです。あなたの"健康の宝"を守るパートナーとして、ぜひお気軽にご利用ください。
               </p>
             </div>
@@ -360,7 +360,7 @@ export default function Home() {
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-6">
             {services.map((service, index) => (
               <Card key={service.name} className="overflow-hidden service-card cursor-pointer group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-6 text-center">
+                <CardContent className="p-4 sm:p-6 text-center">
                   <div className="relative w-16 sm:w-24 h-16 sm:h-24 mx-auto mb-4 overflow-hidden rounded-full service-icon">
                     <Image
                       src={service.icon}
@@ -478,7 +478,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-[#4DA8DA]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-8">LINEで相談&診療予約する</h2>
+          <h2 className="text-xl md:text-3xl font-bold text-white mb-8">LINEで相談&診療予約する</h2>
           <Button size="lg" className="bg-white text-black px-10 py-8 rounded-full text-base font-medium flex items-center gap-2 hover:shadow-xl hover:scale-105 transition-all duration-300 mx-auto">
             <Image 
               src={`${BASE_PATH}/images/line-icon.png`}
@@ -498,16 +498,16 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-16">よくあるご質問</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="border-b pb-6 faq-item">
-              <h3 className="font-bold text-lg mb-2">薬の桃太郎のサービス内容を教えてください</h3>
-              <p className="text-gray-600">薬の桃太郎は、AGA・ED診療、ピル処方をはじめ、いろんな診療がスマホひとつで受診することができるオンライン診療サービスです。</p>
+              <h3 className="font-bold text-sm md:text-lg mb-2">薬の桃太郎のサービス内容を教えてください</h3>
+              <p className="text-xs md:text-base text-gray-600">薬の桃太郎は、AGA・ED診療、ピル処方をはじめ、いろんな診療がスマホひとつで受診することができるオンライン診療サービスです。</p>
             </div>
             <div className="border-b pb-6 faq-item">
-              <h3 className="font-bold text-lg mb-2">オンライン診療の流れを教えてください</h3>
-              <p className="text-gray-600">LINEで予約→問診票記入→オンライン診察→薬のお届けという流れで進みます。</p>
+              <h3 className="font-bold text-sm md:text-lg mb-2">オンライン診療の流れを教えてください</h3>
+              <p className="text-xs md:text-base text-gray-600">LINEで予約→問診票記入→オンライン診察→薬のお届けという流れで進みます。</p>
             </div>
             <div className="border-b pb-6 faq-item">
-              <h3 className="font-bold text-lg mb-2">支払い方法を教えてください</h3>
-              <p className="text-gray-600">VISA、Master、JCB、AMEX、Diners、Amazon Payでのお支払いが可能です。</p>
+              <h3 className="font-bold text-sm md:text-lg mb-2">支払い方法を教えてください</h3>
+              <p className="text-xs md:text-base text-gray-600">VISA、Master、JCB、AMEX、Diners、Amazon Payでのお支払いが可能です。</p>
             </div>
           </div>
         </div>

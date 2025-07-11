@@ -38,37 +38,32 @@ export default function AnimatedHero() {
       name: "メディカルダイエット",
       image: `${BASE_PATH}/images/hero/medical-diet.jpg`,
       accent: "bg-emerald-500"
-    }
-    ,
+    },
     {
       name: "飲む日焼け止め",
       image: `${BASE_PATH}/images/hero/sunscreen.jpg`,
       accent: "bg-emerald-500"
-    }
-    ,
+    },
     {
       name: "花粉症",
       image: `${BASE_PATH}/images/hero/pollen.jpg`,
       accent: "bg-emerald-500"
-    }
-    ,
+    },
     {
       name: "汗のお悩み",
       image: `${BASE_PATH}/images/hero/sweat.jpg`,
       accent: "bg-emerald-500"
-    }
-    ,
-    {
-      name: "性感染症",
-      image: `${BASE_PATH}/images/hero/sex.jpg`,
-      accent: "bg-emerald-500"
-    }
-    ,
-    {
-      name: "こころのお悩み",
-      image: `${BASE_PATH}/images/hero/heart.jpg`,
-      accent: "bg-emerald-500"
-    }
+    },
+    // {
+    //   name: "性感染症",
+    //   image: `${BASE_PATH}/images/hero/sex.jpg`,
+    //   accent: "bg-emerald-500"
+    // },
+    // {
+    //   name: "こころのお悩み",
+    //   image: `${BASE_PATH}/images/hero/heart.jpg`,
+    //   accent: "bg-emerald-500"
+    // }
   ]
 
   // シャッフルされたheroDataを状態として管理
@@ -143,13 +138,15 @@ export default function AnimatedHero() {
         duration: 0.5
       })
 
-      // hero-info-boxのアニメーション（改善版）
+      // hero-info-boxのアニメーション（スマホ対応版）
+      const isMobile = window.innerWidth < 640
+      
       gsap.set("#hero-info-box", {
         opacity: 0,
-        y: 30,
-        x: 20,
+        y: isMobile ? 50 : 30,
+        x: isMobile ? 0 : 20,
         scale: 0.98,
-        rotationY: 5
+        rotationY: isMobile ? 0 : 5
       })
 
       gsap.to("#hero-info-box", {
@@ -162,28 +159,6 @@ export default function AnimatedHero() {
         delay: 1.2,
         ease: "expo.out"
       })
-
-      // ホバー効果の強化
-      const heroInfoBox = document.querySelector("#hero-info-box")
-      if (heroInfoBox) {
-        heroInfoBox.addEventListener('mouseenter', () => {
-          gsap.to("#hero-info-box", {
-            y: -8,
-            scale: 1.02,
-            duration: 0.4,
-            ease: "power2.out"
-          })
-        })
-
-        heroInfoBox.addEventListener('mouseleave', () => {
-          gsap.to("#hero-info-box", {
-            y: 0,
-            scale: 1,
-            duration: 0.4,
-            ease: "power2.out"
-          })
-        })
-      }
 
       // フローティングエレメンツ
       gsap.to(".floating-element", {
@@ -260,12 +235,12 @@ export default function AnimatedHero() {
           {/* サイト名 - スマホでは上部中央、タブレット以上では右上 */}
           <div
             id="hero-info-box"
-            className="absolute top-[12%] sm:top-[10%] md:top-[20%] left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none sm:right-4 md:right-[-5%] z-30 bg-white/95 backdrop-blur-sm border border-neutral-200 shadow-xl p-4 sm:p-6 md:p-8 w-[260px] sm:w-[280px] md:w-[360px] rounded-lg transform-gpu will-change-transform"
+            className="absolute top-[12%] sm:top-[10%] md:top-[20%] left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none sm:right-4 md:right-[-5%] z-30 bg-white/95 backdrop-blur-sm border border-neutral-200 shadow-xl p-4 sm:p-6 md:p-8 w-[260px] sm:w-[280px] md:w-[360px] rounded-lg transform-gpu will-change-transform opacity-0"
           >
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               {/* ヘッダー */}
               <div className="text-center">
-                <Image src={`${BASE_PATH}/images/logo.png`} className='w-full' width={150} height={50} alt="薬の桃太郎" />
+                <Image src={`${BASE_PATH}/images/logo.png`} className='h-14 md:h-auto w-auto md:w-full m-auto' width={150} height={50} alt="薬の桃太郎" />
                 <p className="text-xs sm:text-sm md:text-lg font-bold text-neutral-700">薬の桃太郎のオンライン診療で<br />
                 鬼（病気）（悩み）を退治する</p>
               </div>
