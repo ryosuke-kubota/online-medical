@@ -2,6 +2,10 @@
 
 import Image from "next/image"
 
+import nextConfig from "../../../next.config.mjs";
+
+const BASE_PATH = nextConfig.basePath || "";
+
 export default function FloatingCTA() {
   const handleCTAClick = () => {
     // ここに診療予約のロジックを追加
@@ -16,7 +20,7 @@ export default function FloatingCTA() {
         className="bg-[#FFD66B] text-black px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm font-medium flex items-center gap-2"
       >
         <Image 
-          src="/images/line-icon.png"
+          src={`${BASE_PATH}/images/line-icon.png`}
           alt="LINE"
           className="w-10 h-10"
           width={20}

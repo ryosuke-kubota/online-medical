@@ -2,6 +2,10 @@
 import { notFound } from 'next/navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
 
+import nextConfig from "../../../../next.config.mjs";
+
+const BASE_PATH = nextConfig.basePath || "";
+
 // Type definitions
 interface Product {
   id: number;
@@ -47,7 +51,7 @@ const categories: { [key: string]: CategoryData } = {
         description: '多汗症に効果的な治療法です。汗腺の働きを抑制し、汗の分泌を大幅に減少させます。',
         price: '¥50,000〜',
         duration: '約30分',
-        image: '/products/botox.jpg'
+        image: `${BASE_PATH}/products/botox.jpg`
       },
       {
         id: 2,
@@ -55,7 +59,7 @@ const categories: { [key: string]: CategoryData } = {
         description: '電気を使った非侵襲的な治療法。手のひらや足の裏の多汗症に特に効果的です。',
         price: '¥15,000〜',
         duration: '約45分',
-        image: '/products/iontophoresis.jpg'
+        image: `${BASE_PATH}/products/iontophoresis.jpg`
       },
       {
         id: 3,
@@ -63,7 +67,7 @@ const categories: { [key: string]: CategoryData } = {
         description: '医療用の強力な制汗剤を処方いたします。市販品では効果が不十分な方におすすめです。',
         price: '¥3,000〜',
         duration: '約15分',
-        image: '/products/antiperspirant.jpg'
+        image: `${BASE_PATH}/products/antiperspirant.jpg`
       }
     ]
   },

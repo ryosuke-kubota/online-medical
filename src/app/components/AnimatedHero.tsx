@@ -4,6 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import Image from 'next/image'
 
+import nextConfig from "../../../next.config.mjs";
+
+const BASE_PATH = nextConfig.basePath || "";
+
 export default function AnimatedHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -22,47 +26,47 @@ export default function AnimatedHero() {
   const originalHeroData = [
     {
       name: "ドクターズコスメ",
-      image: "/images/hero/doctors-cosme.jpg",
+      image: `${BASE_PATH}/images/hero/doctors-cosme.jpg`,
       accent: "bg-blue-500"
     },
     {
       name: "メディアルスキンケア",
-      image: "/images/hero/medical-skincare.jpg",
+      image: `${BASE_PATH}/images/hero/medical-skincare.jpg`,
       accent: "bg-purple-500"
     },
     {
       name: "メディカルダイエット",
-      image: "/images/hero/medical-diet.jpg",
+      image: `${BASE_PATH}/images/hero/medical-diet.jpg`,
       accent: "bg-emerald-500"
     }
     ,
     {
       name: "飲む日焼け止め",
-      image: "/images/hero/sunscreen.jpg",
+      image: `${BASE_PATH}/images/hero/sunscreen.jpg`,
       accent: "bg-emerald-500"
     }
     ,
     {
       name: "花粉症",
-      image: "/images/hero/pollen.jpg",
+      image: `${BASE_PATH}/images/hero/pollen.jpg`,
       accent: "bg-emerald-500"
     }
     ,
     {
       name: "汗のお悩み",
-      image: "/images/hero/sweat.jpg",
+      image: `${BASE_PATH}/images/hero/sweat.jpg`,
       accent: "bg-emerald-500"
     }
     ,
     {
       name: "性感染症",
-      image: "/images/hero/sex.jpg",
+      image: `${BASE_PATH}/images/hero/sex.jpg`,
       accent: "bg-emerald-500"
     }
     ,
     {
       name: "こころのお悩み",
-      image: "/images/hero/heart.jpg",
+      image: `${BASE_PATH}/images/hero/heart.jpg`,
       accent: "bg-emerald-500"
     }
   ]
@@ -261,7 +265,7 @@ export default function AnimatedHero() {
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               {/* ヘッダー */}
               <div className="text-center">
-                <Image src={'/images/logo.png'} className='w-full' width={150} height={50} alt="薬の桃太郎" />
+                <Image src={`${BASE_PATH}/images/logo.png`} className='w-full' width={150} height={50} alt="薬の桃太郎" />
                 <p className="text-xs sm:text-sm md:text-lg font-bold text-neutral-700">薬の桃太郎のオンライン診療で<br />
                 鬼（病気）（悩み）を退治する</p>
               </div>

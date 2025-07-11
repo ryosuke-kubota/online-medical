@@ -8,6 +8,10 @@ import FloatingCTA from "./components/FloatingCTA";
 import Link from "next/link";
 import Image from "next/image";
 
+import nextConfig from "../../next.config.mjs";
+
+const BASE_PATH = nextConfig.basePath || "";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -51,7 +55,7 @@ export default function RootLayout({
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                   <div>
                     <Image
-                      src="/images/logo_w.png"
+                      src={`${BASE_PATH}/images/logo_w.png`}
                       alt="薬の桃太郎"
                       width={120}
                       height={40}

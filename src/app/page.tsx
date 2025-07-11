@@ -44,46 +44,46 @@ export default function Home() {
       id: "hair",
       title: "AGA診療、ぜんぶオンラインで",
       subtitle: "ENJOY YOUR STYLE FOREVER.",
-      bg: "/images/brand/brand1.png",
+      bg: `${BASE_PATH}/images/brand/brand1.png`,
       banner: "https://ext.same-assets.com/3284986432/2873164595.png"
     },
     {
       id: "womb",
       title: "子宮との365日に、ちょっぴりピースを。",
       subtitle: "LOVE & PEACE WITH WOMB.",
-      bg: "/images/brand/brand2.png",
+      bg: `${BASE_PATH}/images/brand/brand2.png`,
       banner: "https://ext.same-assets.com/3284986432/698188018.png"
     },
     {
       id: "love",
       title: "ED診療、ぜんぶオンラインで",
       subtitle: "DON'T WORRY. WE ARE THE SAME.",
-      bg: "/images/brand/brand3.png",
+      bg: `${BASE_PATH}/images/brand/brand3.png`,
       banner: "https://ext.same-assets.com/3284986432/3356119166.png"
     },
     {
       id: "heart",
       title: "いろんなこころに、すっと頼れる診療を",
       subtitle: "ALWAYS BY YOUR SIDE.",
-      bg: "/images/brand/brand4.png",
+      bg: `${BASE_PATH}/images/brand/brand4.png`,
       banner: "https://ext.same-assets.com/3284986432/765577380.png"
     }
   ]
 
   const services = [
     // { name: "ED 早漏防止", icon: "/images/services/ed.png" },
-    { name: "インフルエンザ予防", icon: "/images/services/flu.png" },
-    { name: "ドクターズコスメ", icon: "/images/services/doctors-cosme.png" },
-    { name: "メディカルスキンケア", icon: "/images/services/medical-skincare.png" },
-    { name: "メディカルダイエット", icon: "/images/services/medical-diet.png" },
-    { name: "飲む日焼け止め", icon: "/images/services/sunscreen.png" },
-    { name: "花粉症", icon: "/images/services/pollen.png" },
-    { name: "汗のお悩み", icon: "/images/services/sweat.png" },
-    { name: "睡眠障害", icon: "/images/services/sleep.png" },
-    // { name: "性感染症", icon: "/images/services/sex.png" },
-    { name: "生活習慣病", icon: "/images/services/life.png" },
-    // { name: "こころのお悩み", icon: "/images/services/heart.png" },
-    { name: "AGA", icon: "/images/services/aga.png" },
+    { name: "インフルエンザ予防", icon: `${BASE_PATH}/images/services/flu.png` },
+    { name: "ドクターズコスメ", icon: `${BASE_PATH}/images/services/doctors-cosme.png` },
+    { name: "メディカルスキンケア", icon: `${BASE_PATH}/images/services/medical-skincare.png` },
+    { name: "メディカルダイエット", icon: `${BASE_PATH}/images/services/medical-diet.png` },
+    { name: "飲む日焼け止め", icon: `${BASE_PATH}/images/services/sunscreen.png` },
+    { name: "花粉症", icon: `${BASE_PATH}/images/services/pollen.png` },
+    { name: "汗のお悩み", icon: `${BASE_PATH}/images/services/sweat.png` },
+    { name: "睡眠障害", icon: `${BASE_PATH}/images/services/sleep.png` },
+    // { name: "性感染症", icon: `${BASE_PATH}/images/services/sex.png` },
+    { name: "生活習慣病", icon: `${BASE_PATH}/images/services/life.png` },
+    // { name: "こころのお悩み", icon: `${BASE_PATH}/images/services/heart.png` },
+    { name: "AGA", icon: `${BASE_PATH}/images/services/aga.png` },
     // { name: "女性不感症", icon: "/images/services/woman.png" },
     // { name: "ピル", icon: "/images/services/pil.png" }
   ]
@@ -168,22 +168,22 @@ export default function Home() {
     {
       title: "LINEで簡単予約",
       description: "薬の桃太郎のLINE公式アカウントから簡単に予約できます。",
-      image: "/images/how-to-use/how-to-use01.png"
+      image: `${BASE_PATH}/images/how-to-use/how-to-use01.png`
     },
     {
       title: "問診票記入",
       description: "症状や希望に応じて問診票にお答えいただきます。",
-      image: "/images/how-to-use/how-to-use02.png"
+      image: `${BASE_PATH}/images/how-to-use/how-to-use02.png`
     },
     {
       title: "オンライン診察",
       description: "ビデオ通話で医師による診察を受けていただきます。",
-      image: "/images/how-to-use/how-to-use03.png"
+      image: `${BASE_PATH}/images/how-to-use/how-to-use03.png`
     },
     {
       title: "薬のお届け",
       description: "処方された薬がご自宅に配送されます。",
-      image: "/images/how-to-use/how-to-use04.png"
+      image: `${BASE_PATH}/images/how-to-use/how-to-use04.png`
     }
   ]
 
@@ -220,7 +220,7 @@ export default function Home() {
             <div className="text-center mb-16">
               <div className="text-4xl font-bold text-gray-900 mb-6 flex items-center justify-center">
                 <Image
-                  src="/images/logo.png"
+                  src={`${BASE_PATH}/images/logo.png`}
                   alt="薬の桃太郎"
                   width={200}
                   height={60}
@@ -240,7 +240,7 @@ export default function Home() {
               <div className="relative">
                 <div className="relative aspect-square w-full md:aspect-auto md:h-96 md:w-auto rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/about.png"
+                    src={`${BASE_PATH}/images/about.png`}
                     alt="オンライン診療の様子"
                     fill
                     className="object-cover"
@@ -481,7 +481,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-white mb-8">LINEで相談&診療予約する</h2>
           <Button size="lg" className="bg-white text-black px-10 py-8 rounded-full text-base font-medium flex items-center gap-2 hover:shadow-xl hover:scale-105 transition-all duration-300 mx-auto">
             <Image 
-              src="/images/line-icon.png"
+              src={`${BASE_PATH}/images/line-icon.png`}
               alt="LINE"
               className="w-10 h-10"
               width={20}

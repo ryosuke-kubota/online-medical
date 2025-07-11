@@ -5,6 +5,10 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { X } from 'lucide-react'
 
+import nextConfig from "../../../next.config.mjs";
+
+const BASE_PATH = nextConfig.basePath || "";
+
 interface Medicine {
   title: string
   category?: string
@@ -91,7 +95,7 @@ export default function MedicineModal({ medicine, isOpen, onClose }: MedicineMod
                 className="flex-1 py-3 text-base font-medium bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-2"
               >
                 <Image 
-                  src="/images/line-icon.png"
+                  src={`${BASE_PATH}/images/line-icon.png`}
                   alt="LINE"
                   width={20}
                   height={20}
