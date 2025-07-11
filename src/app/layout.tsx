@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   title: "薬の桃太郎 | オンライン診療・処方薬配送サービス",
   description: "薬の桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
   keywords: "オンライン診療, 処方薬配送, AGA治療, ピル処方, ED治療, 花粉症, ニキビ治療, ダイエット漢方, 薬の桃太郎",
+  icons: {
+    icon: "https://ryosuke-kubota.github.io/online-medical/images/logo-c.png",
+    shortcut: "https://ryosuke-kubota.github.io/online-medical/images/logo-c.png",
+    apple: "https://ryosuke-kubota.github.io/online-medical/images/logo-c.png",
+  },
   openGraph: {
     title: "薬の桃太郎 | オンライン診療・処方薬配送サービス",
     description: "薬の桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
@@ -44,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "薬の桃太郎 | オンライン診療・処方薬配送サービス",
     description: "薬の桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
-    images: ["/images/ogp.png"],
+    images: ["https://ryosuke-kubota.github.io/online-medical/images/ogp.png"],
   },
   robots: {
     index: true,
