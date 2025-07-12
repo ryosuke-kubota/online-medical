@@ -26,44 +26,44 @@ export default function AnimatedHero() {
   const originalHeroData = [
     {
       name: "ドクターズコスメ",
-      image: `${BASE_PATH}/images/hero/doctors-cosme.jpg`,
+      image: `${BASE_PATH}/images/hero/hero1.png`,
       accent: "bg-blue-500"
     },
     {
       name: "メディアルスキンケア",
-      image: `${BASE_PATH}/images/hero/medical-skincare.jpg`,
+      image: `${BASE_PATH}/images/hero/hero2.png`,
       accent: "bg-purple-500"
     },
     {
       name: "メディカルダイエット",
-      image: `${BASE_PATH}/images/hero/medical-diet.jpg`,
+      image: `${BASE_PATH}/images/hero/hero3.png`,
       accent: "bg-emerald-500"
     },
     {
       name: "飲む日焼け止め",
-      image: `${BASE_PATH}/images/hero/sunscreen.jpg`,
+      image: `${BASE_PATH}/images/hero/hero4.png`,
       accent: "bg-emerald-500"
     },
     {
       name: "花粉症",
-      image: `${BASE_PATH}/images/hero/pollen.jpg`,
+      image: `${BASE_PATH}/images/hero/hero5.png`,
       accent: "bg-emerald-500"
     },
     {
       name: "汗のお悩み",
-      image: `${BASE_PATH}/images/hero/sweat.jpg`,
+      image: `${BASE_PATH}/images/hero/hero6.png`,
       accent: "bg-emerald-500"
     },
-    // {
-    //   name: "性感染症",
-    //   image: `${BASE_PATH}/images/hero/sex.jpg`,
-    //   accent: "bg-emerald-500"
-    // },
-    // {
-    //   name: "こころのお悩み",
-    //   image: `${BASE_PATH}/images/hero/heart.jpg`,
-    //   accent: "bg-emerald-500"
-    // }
+    {
+      name: "睡眠障害",
+      image: `${BASE_PATH}/images/hero/hero7.png`,
+      accent: "bg-emerald-500"
+    },
+    {
+      name: "生活習慣病",
+      image: `${BASE_PATH}/images/hero/hero8.png`,
+      accent: "bg-emerald-500"
+    }
   ]
 
   // シャッフルされたheroDataを状態として管理
