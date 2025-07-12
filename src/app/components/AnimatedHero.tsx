@@ -123,7 +123,7 @@ export default function AnimatedHero() {
       tl.to(
         "#text h2",
         {
-          top: window.innerWidth < 640 ? "-60px" : "-75px",
+          top: window.innerWidth < 640 ? "-80px" : "-110px",
           stagger: 2,
           duration: 2,
           delay: 2,
@@ -206,9 +206,9 @@ export default function AnimatedHero() {
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4 md:px-8">
         <div id="center" className="relative w-full max-w-7xl h-full flex items-center justify-center">
           {/* 元のアニメーションテキスト */}
-          <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-8rem)] lg:w-[900px] xl:w-[1100px] h-[50px] sm:h-[60px] md:h-[75px] z-10 overflow-hidden">
+          <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-8rem)] lg:w-[900px] xl:w-[1100px] h-[80px] sm:h-[90px] md:h-[110px] z-10 overflow-hidden">
             {heroData.map((item, index) => (
-              <h2 key={index} className="absolute top-[60px] sm:top-[80px] md:top-[100px] left-0 text-[28px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-max h-[50px] sm:h-[60px] md:h-[75px] flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap drop-shadow-lg" style={{ fontFamily: 'var(--font-noto-sans-jp), sans-serif', fontWeight: '900', textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.3)' }}>{item.name}</h2>
+              <h2 key={index} className="absolute pl-6 top-[80px] sm:top-[100px] md:top-[130px] left-0 text-[28px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-max flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap leading-[1.4]" style={{ fontFamily: 'var(--font-noto-sans-jp), sans-serif', fontWeight: '900', textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.4)', filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))', lineHeight: '1.4' }}>{item.name}</h2>
             ))}
           </div>
           
