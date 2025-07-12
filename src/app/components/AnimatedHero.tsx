@@ -10,6 +10,9 @@ const BASE_PATH = nextConfig.basePath || "";
 
 export default function AnimatedHero() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const logoBlackRef = useRef<HTMLImageElement>(null)
+  const logoWhiteRef = useRef<HTMLImageElement>(null)
+  const textRef = useRef<HTMLParagraphElement>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
 
@@ -84,6 +87,31 @@ export default function AnimatedHero() {
           setCurrentIndex((prev) => (prev + 1) % heroData.length)
         }
       })
+      
+      // 初期設定：白いロゴを非表示にする
+      gsap.set(logoWhiteRef.current, { opacity: 0 })
+
+      // ロゴアニメーション用のタイムライン（1度だけ実行）
+      const logoTl = gsap.timeline({
+        delay: 0.5 // 0.5秒後に開始（画像アニメーションより早く）
+      })
+
+      // スムーズなクロスフェードアニメーション
+      logoTl.to(logoBlackRef.current, {
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.inOut"
+      })
+      .to(logoWhiteRef.current, {
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.inOut"
+      }, "-=0.6") // 同時に開始
+      .to(textRef.current, {
+        color: "#ffffff",
+        duration: 0.6,
+        ease: "power2.inOut"
+      }, "-=0.6") // 同時に開始
       
       // パララックス効果
       gsap.to(".parallax-bg", {
@@ -174,6 +202,7 @@ export default function AnimatedHero() {
 
       return () => {
         tl.kill()
+        logoTl.kill()
       }
     }
   }, [isPlaying, heroData.length])
@@ -208,12 +237,12 @@ export default function AnimatedHero() {
           {/* 元のアニメーションテキスト */}
           <div id="text" className="absolute bottom-[5%] md:bottom-[10%] left-0 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-8rem)] lg:w-[900px] xl:w-[1100px] h-[80px] sm:h-[90px] md:h-[110px] z-10 overflow-hidden">
             {heroData.map((item, index) => (
-              <h2 key={index} className="absolute pl-2 md:pl-6 top-[80px] sm:top-[100px] md:top-[130px] left-0 text-[27px] sm:text-[36px] md:text-[42px] lg:text-[48px] uppercase w-max flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap leading-[1.4]" style={{ fontFamily: 'var(--font-noto-sans-jp), sans-serif', fontWeight: '900', textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.4)', filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))', lineHeight: '1.4' }}>{item.name}</h2>
+              <h2 key={index} className="absolute pl-2 md:pl-6 top-[80px] sm:top-[100px] md:top-[130px] left-0 text-[27px] sm:text-[36px] md:text-[42px] lg:text-[48px] uppercase w-max flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap leading-[1.4]" style={{ fontFamily: 'var(--font-noto-sans-jp), sans-serif', fontWeight: '900', textShadow: '2px 2px 4px rgba(0,0,0,0.7), 1px 1px 2px rgba(0,0,0,0.5), 0 0 8px rgba(0,0,0,0.3)', filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.3))', lineHeight: '1.4' }}>{item.name}</h2>
             ))}
           </div>
           
           {/* 画像コンテナ - スマホでは縦長、タブレット以上では横長 */}
-          <div className="relative w-full sm:w-[85%] md:w-[100%] h-[70%] sm:h-[60%] md:h-[80%] flex items-center justify-center">
+          <div className="relative w-full sm:w-[85%] md:w-[100%] h-[75%] sm:h-[60%] md:h-[80%] flex items-center justify-center">
             {heroData.map((item, index) => (
               <div key={index} id="image-container" className="absolute w-0 h-full overflow-hidden rounded-lg">
                 <div className="relative w-full h-full">
@@ -240,14 +269,30 @@ export default function AnimatedHero() {
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               {/* ヘッダー */}
               <div className="text-center">
-                <Image
-                  src={`${BASE_PATH}/images/logo_white.png`}
-                  alt="MOMOTARO Logo"
-                  width={300}
-                  height={60}
-                  className="mx-auto mb-4 w-[300px] h-auto"
-                />
-                <p className="text-xs sm:text-sm md:text-lg font-bold text-white">いつでもカンタン診療</p>
+                <div className="relative mx-auto mb-4 w-[180px] md:w-[300px] h-[30px] md:h-[60px]">
+                  <img
+                    ref={logoBlackRef}
+                    src={`${BASE_PATH}/images/logo_black.png`}
+                    alt="MOMOTARO Logo Black"
+                    // width={300}
+                    // height={60}
+                    className="absolute top-0 left-0 w-[180px] md:w-[300px] h-auto h-auto"
+                  />
+                  <img
+                    ref={logoWhiteRef}
+                    src={`${BASE_PATH}/images/logo_white.png`}
+                    alt="MOMOTARO Logo White"
+                    // width={300}
+                    // height={60}
+                    className="absolute top-0 left-0 w-[180px] md:w-[300px] h-auto h-auto opacity-0"
+                  />
+                </div>
+                <p
+                  ref={textRef}
+                  className="text-xs sm:text-sm md:text-lg font-bold text-black"
+                >
+                  いつでもカンタン診療
+                </p>
               </div>
             </div>
           </div>
