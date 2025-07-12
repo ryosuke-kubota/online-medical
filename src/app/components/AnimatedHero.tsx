@@ -99,19 +99,19 @@ export default function AnimatedHero() {
       // スムーズなクロスフェードアニメーション
       logoTl.to(logoBlackRef.current, {
         opacity: 0,
-        duration: 0.6,
+        duration: 1,
         ease: "power2.inOut"
       })
       .to(logoWhiteRef.current, {
         opacity: 1,
-        duration: 0.6,
+        duration: 1,
         ease: "power2.inOut"
-      }, "-=0.6") // 同時に開始
+      }, "-=1") // 同時に開始
       .to(textRef.current, {
         color: "#ffffff",
-        duration: 0.6,
+        duration: 1,
         ease: "power2.inOut"
-      }, "-=0.6") // 同時に開始
+      }, "-=1") // 同時に開始
       
       // パララックス効果
       gsap.to(".parallax-bg", {
