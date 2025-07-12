@@ -139,38 +139,38 @@ export default function AnimatedHero() {
       })
 
       // hero-info-boxのアニメーション（スマホ対応版）
-      const isMobile = window.innerWidth < 640
+      // const isMobile = window.innerWidth < 640
       
-      gsap.set("#hero-info-box", {
-        opacity: 0,
-        y: isMobile ? 50 : 30,
-        x: isMobile ? 0 : 20,
-        scale: 0.98,
-        rotationY: isMobile ? 0 : 5
-      })
+      // gsap.set("#hero-info-box", {
+      //   opacity: 0,
+      //   y: isMobile ? 50 : 30,
+      //   x: isMobile ? 0 : 20,
+      //   scale: 0.98,
+      //   rotationY: isMobile ? 0 : 5
+      // })
 
-      gsap.to("#hero-info-box", {
-        opacity: 1,
-        y: 0,
-        x: 0,
-        scale: 1,
-        rotationY: 0,
-        duration: 1.8,
-        delay: 1.2,
-        ease: "expo.out"
-      })
+      // gsap.to("#hero-info-box", {
+      //   opacity: 1,
+      //   y: 0,
+      //   x: 0,
+      //   scale: 1,
+      //   rotationY: 0,
+      //   duration: 1.8,
+      //   delay: 1.2,
+      //   ease: "expo.out"
+      // })
 
       // フローティングエレメンツ
-      gsap.to(".floating-element", {
-        y: "random(-20, 20)",
-        x: "random(-10, 10)",
-        rotation: "random(-5, 5)",
-        duration: "random(3, 6)",
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        stagger: 0.5
-      })
+      // gsap.to(".floating-element", {
+      //   y: "random(-20, 20)",
+      //   x: "random(-10, 10)",
+      //   rotation: "random(-5, 5)",
+      //   duration: "random(3, 6)",
+      //   repeat: -1,
+      //   yoyo: true,
+      //   ease: "sine.inOut",
+      //   stagger: 0.5
+      // })
 
       return () => {
         tl.kill()
@@ -206,14 +206,14 @@ export default function AnimatedHero() {
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4 md:px-8">
         <div id="center" className="relative w-full max-w-7xl h-full flex items-center justify-center">
           {/* 元のアニメーションテキスト */}
-          <div id="text" className="absolute bottom-[15%] md:bottom-[20%] left-4 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-8rem)] lg:w-[900px] xl:w-[1100px] h-[80px] sm:h-[90px] md:h-[110px] z-10 overflow-hidden">
+          <div id="text" className="absolute bottom-[5%] md:bottom-[10%] left-0 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-8rem)] lg:w-[900px] xl:w-[1100px] h-[80px] sm:h-[90px] md:h-[110px] z-10 overflow-hidden">
             {heroData.map((item, index) => (
-              <h2 key={index} className="absolute pl-6 top-[80px] sm:top-[100px] md:top-[130px] left-0 text-[28px] sm:text-[40px] md:text-[50px] lg:text-[60px] uppercase w-max flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap leading-[1.4]" style={{ fontFamily: 'var(--font-noto-sans-jp), sans-serif', fontWeight: '900', textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.4)', filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))', lineHeight: '1.4' }}>{item.name}</h2>
+              <h2 key={index} className="absolute pl-2 md:pl-6 top-[80px] sm:top-[100px] md:top-[130px] left-0 text-[27px] sm:text-[36px] md:text-[42px] lg:text-[48px] uppercase w-max flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap leading-[1.4]" style={{ fontFamily: 'var(--font-noto-sans-jp), sans-serif', fontWeight: '900', textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.4)', filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))', lineHeight: '1.4' }}>{item.name}</h2>
             ))}
           </div>
           
           {/* 画像コンテナ - スマホでは縦長、タブレット以上では横長 */}
-          <div className="relative w-full sm:w-[85%] md:w-[80%] h-[60%] sm:h-[60%] md:h-[80%] flex items-center justify-center">
+          <div className="relative w-full sm:w-[85%] md:w-[100%] h-[70%] sm:h-[60%] md:h-[80%] flex items-center justify-center">
             {heroData.map((item, index) => (
               <div key={index} id="image-container" className="absolute w-0 h-full overflow-hidden rounded-lg">
                 <div className="relative w-full h-full">
@@ -232,16 +232,22 @@ export default function AnimatedHero() {
             ))}
           </div>
 
-          {/* サイト名 - スマホでは上部中央、タブレット以上では右上 */}
+          {/* サイト名 - 画像の中央に配置 */}
           <div
             id="hero-info-box"
-            className="absolute top-[12%] sm:top-[10%] md:top-[20%] left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none sm:right-4 md:right-[-5%] z-30 bg-white/95 backdrop-blur-sm border border-neutral-200 shadow-xl p-4 sm:p-6 md:p-8 w-[260px] sm:w-[280px] md:w-[360px] rounded-lg transform-gpu will-change-transform opacity-0"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 backdrop-blur-xs border-neutral-200 p-4 sm:p-6 md:p-8 w-[260px] sm:w-[280px] md:w-[360px] rounded-lg transform-gpu will-change-transform"
           >
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               {/* ヘッダー */}
               <div className="text-center">
-                <h1 className='text-4xl font-bold mb-4'>薬の桃太郎</h1>
-                <p className="text-xs sm:text-sm md:text-lg font-bold text-neutral-700">いつでもカンタン診療</p>
+                <Image
+                  src={`${BASE_PATH}/images/logo_white.png`}
+                  alt="MOMOTARO Logo"
+                  width={300}
+                  height={60}
+                  className="mx-auto mb-4 w-[300px] h-auto"
+                />
+                <p className="text-xs sm:text-sm md:text-lg font-bold text-white">いつでもカンタン診療</p>
               </div>
             </div>
           </div>

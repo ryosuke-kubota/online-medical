@@ -219,7 +219,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 md:py-20">
               <div className="space-y-6">
-                <h3 className="text-left text-2xl md:text-4xl font-bold text-gray-900 leading-[2] md:leading-[2]">薬の桃太郎が守る<br className='md:hidden' />"健康の宝"</h3>
+                <h3 className="text-center md:text-left text-2xl md:text-4xl font-bold text-gray-900 leading-[2] md:leading-[2]">薬の桃太郎が守る<br className='md:hidden' />"健康の宝"</h3>
                 <p className="text-sm md:text-xl text-black font-bold leading-[2.6] md:leading-[2.6]">
                   日本の昔話「桃太郎」のように、私たちは「薬」を武器にして、皆さまの"健康という宝"をお守りします。
                   <br /><br />
