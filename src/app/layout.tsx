@@ -60,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={notoSansJP.variable}>
+    <html lang="ja" className={`${notoSansJP.variable} overflow-x-hidden`}>
       <head>
       </head>
       <body suppressHydrationWarning className="antialiased">
