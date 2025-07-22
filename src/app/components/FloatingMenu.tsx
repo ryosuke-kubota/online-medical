@@ -56,15 +56,19 @@ export default function FloatingMenu() {
         <div className={`absolute top-16 right-0 w-64 bg-white/95 backdrop-blur-sm border border-neutral-200 rounded-2xl shadow-xl transition-all duration-300 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
           <div className="p-6 space-y-4">
             <div className="space-y-3">
-              <Link href="/#services" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">診療メニュー</Link>
-              <Link href="/#features" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">サービス特徴</Link>
-              <Link href="/#how-to-use" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">ご利用方法</Link>
+              <Link href="/#pick-up" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">ピックアップ</Link>
+              <Link href="/#services" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">診療科目</Link>
+              <Link href="/#medicines" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">お薬</Link>
+              <Link href="/#features" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">特徴</Link>
+              <Link href="/#how-to-use" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">ご利用の流れ</Link>
               <Link href="/#faq" className="block text-neutral-900 hover:text-blue-600 transition-colors duration-200 font-medium">よくある質問</Link>
             </div>
             <div className="pt-4 border-t border-neutral-200">
-              <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-4 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300">
-                診療予約する
-              </button>
+              <Link href="/#cta">
+                <button className="w-full bg-[#4DA8DA] text-white py-2 px-4 rounded-full text-sm font-medium hover:bg-[#3d8bb3] hover:shadow-lg transition-all duration-300">
+                  診療予約する
+                </button>
+              </Link>
             </div>
           </div>
         </div>

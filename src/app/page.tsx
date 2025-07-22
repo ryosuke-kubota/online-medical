@@ -150,17 +150,17 @@ export default function Home() {
     {
       title: "スマホで完結",
       description: "診察から薬の受け取りまで、全てスマホで完結します。",
-      image: "https://ext.same-assets.com/3284986432/2624333347.jpeg"
+      image: `${BASE_PATH}/images/features/features01.png` 
     },
     {
       title: "プライバシー配慮",
       description: "配送時の梱包や宛名など、プライバシーに配慮しています。",
-      image: "https://ext.same-assets.com/3284986432/492600595.jpeg"
+      image: `${BASE_PATH}/images/features/features02.png` 
     },
     {
       title: "医師による診察",
       description: "経験豊富な医師が、あなたの症状に合わせて診察します。",
-      image: "https://ext.same-assets.com/3284986432/3882650208.jpeg"
+      image: `${BASE_PATH}/images/features/features03.png` 
     }
   ]
 
@@ -317,7 +317,7 @@ export default function Home() {
       </section>
 
       {/* Brand Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50" id='pick-up'>
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">ピックアップ</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
@@ -346,7 +346,7 @@ export default function Home() {
       </section>
 
       {/* All Services */}
-      <section className="py-20">
+      <section className="py-20" id="services">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">診療科目</h2>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-6">
@@ -372,7 +372,7 @@ export default function Home() {
       </section>
 
       {/* Medicine Cards */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50" id='medicines'>
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">お薬</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -418,7 +418,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="py-20">
+      <section className="py-20" id="features">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">特徴</h2>
           <p className="text-center text-gray-600 mb-16">薬の桃太郎が選ばれる3つの理由</p>
@@ -442,7 +442,7 @@ export default function Home() {
       </section>
 
       {/* How to Use */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50" id='how-to-use'>
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">ご利用の流れ</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -468,7 +468,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#4DA8DA]">
+      <section className="py-20 bg-[#4DA8DA]" id="cta">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-xl md:text-3xl font-bold text-white mb-8">LINEで相談&診療予約する</h2>
           <Button size="lg" className="bg-white text-black px-10 py-8 rounded-full text-base font-medium flex items-center gap-2 hover:shadow-xl hover:scale-105 transition-all duration-300 mx-auto">
@@ -485,9 +485,9 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
+      <section className="py-20" id='faq'>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">よくあるご質問</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">よくある質問</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="border-b pb-6 faq-item">
               <h3 className="font-bold text-sm md:text-lg mb-2">薬の桃太郎のサービス内容を教えてください</h3>
