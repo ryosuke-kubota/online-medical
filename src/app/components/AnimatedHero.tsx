@@ -235,9 +235,9 @@ export default function AnimatedHero() {
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4 md:px-8">
         <div id="center" className="relative w-full max-w-7xl h-full flex items-center justify-center">
           {/* 元のアニメーションテキスト */}
-          <div id="text" className="absolute bottom-[5%] md:bottom-[10%] left-0 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-8rem)] lg:w-[900px] xl:w-[1100px] h-[80px] sm:h-[90px] md:h-[110px] z-10 overflow-hidden">
+          <div id="text" className="absolute bottom-[10%] md:bottom-[10%] left-0 md:left-4 w-[calc(100vw-2rem)] sm:w-[calc(100vw-4rem)] md:w-[calc(100vw-8rem)] lg:w-[900px] xl:w-[1100px] h-[80px] sm:h-[90px] md:h-[110px] z-10 overflow-hidden">
             {heroData.map((item, index) => (
-              <h2 key={index} className="absolute pl-2 md:pl-6 top-[80px] sm:top-[100px] md:top-[130px] left-0 text-[27px] sm:text-[36px] md:text-[42px] lg:text-[48px] uppercase w-max flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap leading-[1.4]" style={{ fontFamily: 'var(--font-noto-sans-jp), sans-serif', fontWeight: '900', textShadow: '2px 2px 4px rgba(0,0,0,0.7), 1px 1px 2px rgba(0,0,0,0.5), 0 0 8px rgba(0,0,0,0.3)', filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.3))', lineHeight: '1.4' }}>{item.name}</h2>
+              <h2 key={index} className="absolute pl-2 md:pl-6 top-[80px] sm:top-[100px] md:top-[130px] left-0 text-[27px] sm:text-[36px] md:text-[42px] lg:text-[48px] uppercase w-max flex items-center justify-start tracking-[1px] sm:tracking-[2px] md:tracking-[3px] font-bold text-white whitespace-nowrap leading-[1.4]" style={{ fontFamily: 'var(--font-shippori-mincho), "Sawarabi Mincho", serif', fontWeight: '900', textShadow: '2px 2px 4px rgba(0,0,0,0.7), 1px 1px 2px rgba(0,0,0,0.5), 0 0 8px rgba(0,0,0,0.3)', filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.3))', lineHeight: '1.4' }}>{item.name}</h2>
             ))}
           </div>
           

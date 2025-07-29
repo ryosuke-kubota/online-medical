@@ -243,13 +243,8 @@ export default function Home() {
             </div>
 
             {/* 特長セクション */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-16">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-16">
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                {/* <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                  </svg>
-                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">いつでもどこでも簡単診療</h4>
                 <p className="text-gray-600 text-xs md:text-sm leading-6">
                   スマホやPCから24時間いつでもアクセス可能。思い立ったらすぐに専門医とつながり、面倒な移動や長い待ち時間は一切なし。
@@ -257,11 +252,6 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                {/* <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">予約制で待ち時間ゼロ</h4>
                 <p className="text-gray-600 text-xs md:text-sm leading-6">
                   ご都合のよい日時を選ぶだけ。予約時間になればすぐチャットまたはビデオ通話で問診／診察がスタートします。
@@ -269,11 +259,6 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                {/* <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">安心・安全の専門医処方</h4>
                 <p className="text-gray-600 text-xs md:text-sm leading-6">
                   各分野のプロフェッショナル医師が、丁寧な問診をもとに最適な薬を処方。万一のフォローアップまでしっかりサポートします。
@@ -281,11 +266,6 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                {/* <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">プライバシー厳守</h4>
                 <p className="text-gray-600 text-xs md:text-sm leading-6">
                   全てオンラインで完結するから、周りの目を気にせず診療OK。プライバシーがしっかり守られます。
@@ -293,11 +273,6 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                {/* <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div> */}
                 <h4 className="text-xl font-bold text-gray-900 mb-3">翌日お届けの迅速配送</h4>
                 <p className="text-gray-600 text-xs md:text-sm leading-6">
                   処方した薬は最短で翌日にはご自宅へ。まるで桃から飛び出したキジのように、素早く手元にお届けします。
@@ -305,13 +280,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 締めくくりメッセージ */}
             <div className="text-center bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl">
               <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-4">手軽さ × 安心感 × スピード</h3>
               <p className="text-xs md:text-lg text-gray-700 leading-8 max-w-4xl mx-auto">
                 薬の桃太郎は、「手軽さ × 安心感 × スピード」を兼ね備えた新しいオンライン診療サービスです。あなたの"健康の宝"を守るパートナーとして、ぜひお気軽にご利用ください。
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Noto_Sans_JP, Shippori_Mincho } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import Header from "./components/Header";
@@ -15,6 +15,12 @@ const BASE_PATH = nextConfig.basePath || "";
 const notoSansJP = Noto_Sans_JP({
   weight: ["400", "500", "700", "900"],
   variable: "--font-noto-sans-jp",
+  subsets: ["latin"],
+});
+
+const notoSerif = Shippori_Mincho({
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-noto-serif",
   subsets: ["latin"],
 });
 
@@ -60,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${notoSansJP.variable} overflow-x-hidden`}>
+    <html lang="ja" className={`${notoSansJP.variable} ${notoSerif.variable} overflow-x-hidden`}>
       <head>
       </head>
       <body suppressHydrationWarning className="antialiased">
