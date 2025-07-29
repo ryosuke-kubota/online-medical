@@ -167,7 +167,7 @@ export default function Home() {
   const howToUse = [
     {
       title: "LINEで簡単予約",
-      description: "薬の桃太郎のLINE公式アカウントから簡単に予約できます。",
+      description: "くすりの桃太郎のLINE公式アカウントから簡単に予約できます。",
       image: `${BASE_PATH}/images/how-to-use/how-to-use01.png`
     },
     {
@@ -219,7 +219,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 md:py-20">
               <div className="space-y-6">
-                <h3 className="text-center md:text-left text-2xl md:text-4xl font-bold text-gray-900 leading-[2] md:leading-[2]">薬の桃太郎が守る<br className='md:hidden' />"健康の宝"</h3>
+                <h3 className="text-center md:text-left text-2xl md:text-4xl font-bold text-gray-900 leading-[2] md:leading-[2]">くすりの桃太郎が守る<br className='md:hidden' />"健康の宝"</h3>
                 <p className="text-sm md:text-xl text-black font-bold leading-[2.6] md:leading-[2.6]">
                   日本の昔話「桃太郎」のように、私たちは「薬」を武器にして、皆さまの"健康という宝"をお守りします。
                   <br /><br />
@@ -283,7 +283,7 @@ export default function Home() {
             <div className="text-center bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl">
               <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-4">手軽さ × 安心感 × スピード</h3>
               <p className="text-xs md:text-lg text-gray-700 leading-8 max-w-4xl mx-auto">
-                薬の桃太郎は、「手軽さ × 安心感 × スピード」を兼ね備えた新しいオンライン診療サービスです。あなたの"健康の宝"を守るパートナーとして、ぜひお気軽にご利用ください。
+                くすりの桃太郎は、「手軽さ × 安心感 × スピード」を兼ね備えた新しいオンライン診療サービスです。あなたの"健康の宝"を守るパートナーとして、ぜひお気軽にご利用ください。
               </p>
             </div> */}
           </div>
@@ -395,7 +395,7 @@ export default function Home() {
       <section className="py-20" id="features">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">特徴</h2>
-          <p className="text-center text-gray-600 mb-16">薬の桃太郎が選ばれる3つの理由</p>
+          <p className="text-center text-gray-600 mb-16">くすりの桃太郎が選ばれる3つの理由</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {features.map((feature, index) => (
               <div key={feature.title} className="text-center feature-item">
@@ -464,8 +464,8 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-16">よくある質問</h2>
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="border-b pb-6 faq-item">
-              <h3 className="font-bold text-sm md:text-lg mb-2">薬の桃太郎のサービス内容を教えてください</h3>
-              <p className="text-xs md:text-base text-gray-600">薬の桃太郎は、AGA・ED診療、ピル処方をはじめ、いろんな診療がスマホひとつで受診することができるオンライン診療サービスです。</p>
+              <h3 className="font-bold text-sm md:text-lg mb-2">くすりの桃太郎のサービス内容を教えてください</h3>
+              <p className="text-xs md:text-base text-gray-600">くすりの桃太郎は、AGA・ED診療、ピル処方をはじめ、いろんな診療がスマホひとつで受診することができるオンライン診療サービスです。</p>
             </div>
             <div className="border-b pb-6 faq-item">
               <h3 className="font-bold text-sm md:text-lg mb-2">オンライン診療の流れを教えてください</h3>

@@ -29,7 +29,7 @@ export default function FloatingMenu() {
           <Link href="/">
             <Image
               src="https://ext.same-assets.com/3284986432/991739575.svg"
-              alt="薬の桃太郎"
+              alt="くすりの桃太郎"
               width={100}
               height={32}
               className="hover:scale-105 transition-transform duration-300"

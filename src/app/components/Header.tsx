@@ -13,12 +13,12 @@ const Header = () => {
             <div className="flex items-center gap-2">
               <Image
                 src={`${BASE_PATH}/images/logo.png`}
-                alt="薬の桃太郎"
+                alt="くすりの桃太郎"
                 width={40}
                 height={40}
                 className="hover:scale-105 transition-transform duration-300"
               />
-              <span className="text-2xl font-bold text-gray-800">薬の桃太郎</span>
+              <span className="text-2xl font-bold text-gray-800">くすりの桃太郎</span>
             </div>
           </Link>
         </div>

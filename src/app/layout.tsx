@@ -25,17 +25,17 @@ const notoSerif = Shippori_Mincho({
 });
 
 export const metadata: Metadata = {
-  title: "薬の桃太郎 | オンライン診療・処方薬配送サービス",
-  description: "薬の桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
-  keywords: "オンライン診療, 処方薬配送, AGA治療, ピル処方, ED治療, 花粉症, ニキビ治療, ダイエット漢方, 薬の桃太郎",
+  title: "くすりの桃太郎 | オンライン診療・処方薬配送サービス",
+  description: "くすりの桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
+  keywords: "オンライン診療, 処方薬配送, AGA治療, ピル処方, ED治療, 花粉症, ニキビ治療, ダイエット漢方, くすりの桃太郎",
   icons: {
     icon: "https://ryosuke-kubota.github.io/online-medical/images/logo-c.png",
     shortcut: "https://ryosuke-kubota.github.io/online-medical/images/logo-c.png",
     apple: "https://ryosuke-kubota.github.io/online-medical/images/logo-c.png",
   },
   openGraph: {
-    title: "薬の桃太郎 | オンライン診療・処方薬配送サービス",
-    description: "薬の桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
+    title: "くすりの桃太郎 | オンライン診療・処方薬配送サービス",
+    description: "くすりの桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
     type: "website",
     locale: "ja_JP",
     images: [
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
         url: "https://ryosuke-kubota.github.io/online-medical/images/ogp.png",
         width: 1200,
         height: 630,
-        alt: "薬の桃太郎 - オンライン診療・処方薬配送サービス",
+        alt: "くすりの桃太郎 - オンライン診療・処方薬配送サービス",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "薬の桃太郎 | オンライン診療・処方薬配送サービス",
-    description: "薬の桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
+    title: "くすりの桃太郎 | オンライン診療・処方薬配送サービス",
+    description: "くすりの桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
     images: ["https://ryosuke-kubota.github.io/online-medical/images/ogp.png"],
   },
   robots: {
@@ -85,7 +85,7 @@ export default function RootLayout({
                   <div>
                     <Image
                       src={`${BASE_PATH}/images/logo_white.png`}
-                      alt="薬の桃太郎"
+                      alt="くすりの桃太郎"
                       width={120}
                       height={40}
                       className="mb-6 w-[200px] h-auto mx-auto md:mx-0"
@@ -126,7 +126,7 @@ export default function RootLayout({
                   </div>
                 </div>
                 <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-                  <p>&copy; 2025 薬の桃太郎. All rights reserved.</p>
+                  <p>&copy; 2025 くすりの桃太郎. All rights reserved.</p>
                 </div>
               </div>
             </footer>
