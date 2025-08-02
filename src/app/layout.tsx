@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   description: "くすりの桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
   keywords: "オンライン診療, 処方薬配送, AGA治療, ピル処方, ED治療, 花粉症, ニキビ治療, ダイエット漢方, くすりの桃太郎",
   icons: {
-    icon: "https://ryosuke-kubota.github.io/online-medical/images/logo-c.png",
-    shortcut: "https://ryosuke-kubota.github.io/online-medical/images/logo-c.png",
-    apple: "https://ryosuke-kubota.github.io/online-medical/images/logo-c.png",
+    icon: "https://momotaro-jp.com/images/logo_m.png",
+    shortcut: "https://momotaro-jp.com/images/logo_m.png",
+    apple: "https://momotaro-jp.com/images/logo_m.png",
   },
   openGraph: {
     title: "くすりの桃太郎 | オンライン診療・処方薬配送サービス",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     images: [
       {
-        url: "https://ryosuke-kubota.github.io/online-medical/images/ogp.png",
+        url: "https://momotaro-jp.com/images/ogp.png",
         width: 1200,
         height: 630,
         alt: "くすりの桃太郎 - オンライン診療・処方薬配送サービス",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "くすりの桃太郎 | オンライン診療・処方薬配送サービス",
     description: "くすりの桃太郎は、AGA治療、ピル処方、ED治療、花粉症、ニキビ治療など幅広い診療をオンラインで提供。医師による診察から処方薬の配送まで、安心・便利なオンライン医療サービスです。",
-    images: ["https://ryosuke-kubota.github.io/online-medical/images/ogp.png"],
+    images: ["https://momotaro-jp.com/images/ogp.png"],
   },
   robots: {
     index: true,
