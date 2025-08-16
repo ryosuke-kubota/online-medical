@@ -95,7 +95,7 @@ export default function Home() {
       drugName: "フィナステリド",
       price: "1,900",
       originalPrice: "2,090",
-      image: "https://ext.same-assets.com/3284986432/3515286607.jpeg",
+      image: `${BASE_PATH}/images/products/product01.jpeg`,
       details: "5α還元酵素阻害薬でAGAの根本治療薬です。服用することでヘアサイクルを正常化し、AGAを改善します。"
     },
     {
@@ -104,7 +104,7 @@ export default function Home() {
       drugName: "デュタステリド",
       price: "4,980",
       originalPrice: "5,478",
-      image: "https://ext.same-assets.com/3284986432/3755871950.jpeg",
+      image: `${BASE_PATH}/images/products/product02.jpeg`,
       details: "フィナステリドよりも強力な5α還元酵素阻害薬です。より効果的なAGA治療が期待できます。"
     },
     {
@@ -113,7 +113,7 @@ export default function Home() {
       drugName: "ミノキシジル",
       price: "1,800",
       originalPrice: "1,980",
-      image: "https://ext.same-assets.com/3284986432/1981089046.jpeg",
+      image: `${BASE_PATH}/images/products/product03.jpeg`,
       details: "血管拡張作用により毛根への血流を改善し、発毛を促進する外用薬です。"
     },
     {
@@ -122,7 +122,7 @@ export default function Home() {
       drugName: "トリキュラー",
       price: "2,350",
       originalPrice: "2,585",
-      image: "https://ext.same-assets.com/3284986432/1271733455.jpeg",
+      image: `${BASE_PATH}/images/products/product04.jpeg`,
       details: "避妊効果に加え、月経周期の安定化や月経困難症の改善にも効果があります。"
     },
     {
@@ -132,7 +132,7 @@ export default function Home() {
       subtitle: "1回あたり136円〜",
       price: "7,900",
       originalPrice: "8,690",
-      image: "https://ext.same-assets.com/3284986432/1016171196.jpeg",
+      image: `${BASE_PATH}/images/products/product05.jpeg`,
       details: "PDE5阻害薬として血管を拡張し、勃起機能を改善します。服用後約1時間で効果が現れます。"
     },
     {
@@ -141,7 +141,7 @@ export default function Home() {
       drugName: "アレグラ",
       price: "2,500",
       originalPrice: "2,750",
-      image: "https://ext.same-assets.com/3284986432/902400015.jpeg",
+      image: `${BASE_PATH}/images/products/product06.jpeg`,
       details: "第2世代抗ヒスタミン薬で、眠気が少なく花粉症の症状を効果的に抑制します。"
     }
   ]
